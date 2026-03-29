@@ -120,24 +120,25 @@ const serviceData = {
     title: 'HOUSE WASH',
     subtitle: 'Exterior Soft Wash System',
     description:
-      'Uses professional downstreaming techniques to apply a customized, surface-safe cleaning solution. This "Soft Wash" approach melts away years of algae, mold, and environmental buildup without high pressure.',
-    specs: ['Downstream injection', 'Surface-safe SH blend', 'Zero high pressure'],
+
+      `Our professional house washing service is designed to restore the beauty and cleanliness of your home's exterior. Over time, dirt, grime, algae, and other contaminants can accumulate on the surfaces, making your house look dull and uninviting. Here at Pineywoods ProWash, we employ state-of-the-art cleaning equipment and cleaning solutions to effectively remove these stubborn stains, giving your house a fresh and revitalized appearance.`,
+    specs: ['Safe for all siding, paint and windows', 'Kills mold and algae at the root', 'Cleaning with science, not high pressure'],
     icon: HouseIcon,
   },
   roof: {
     title: 'ROOF CLEANING',
     subtitle: 'Dedicated Soft Wash Treatment',
     description:
-      'Targets Gloeocapsa Magma—an algae that feeds on limestone in shingles. Our dedicated roof pump system gently applies a specialized treatment that kills algae at the root. Zero high pressure.',
-    specs: ['Gloeocapsa Magma targeting', 'Dedicated roof pump', 'Root-level treatment'],
+      `Our professional roof washing service is designed to restore the beauty and integrity of your roof while protecting your investment. Over time, roofs can accumulate debris, moss, algae, lichen, and other unsightly and potentially damaging substances. We utilize the highest quality cleaning solutions to effectively remove these contaminants, restoring your roof and extending its lifespan.`,
+    specs: ['Safely removes those stubborn black streaks', 'Professional - grade chemical treatment - not just a rinse', 'Extends the lifespan of your shingles'],
     icon: RoofIcon,
   },
   flatwork: {
-    title: 'FLATWORK',
-    subtitle: 'Surface Cleaner Protocols',
+    title: 'CONCRETE & DRIVEWAY CLEANING',
+    subtitle: 'PRO Grade Surface Cleaning',
     description:
-      'Utilizes professional-grade surface cleaners for a uniform, streak-free clean for driveways, sidewalks, and patios. Includes pre-treatment and post-treatment protocols.',
-    specs: ['20" surface cleaner', 'Pre/post treatment', 'Streak-free finish'],
+      `Our professional surface cleaning services are designed to restore the beauty and safety of your concrete, brick, and stone surfaces. Over time, surfaces can accumulate dirt, grime, oil stains, mold, algae, and other contaminants. We utilize state-of-the-art cleaning equipment and specialized cleaning solutions to effectively remove these stubborn stains, giving your outdoor areas a fresh and revitalized appearance.`,
+    specs: ['Deep stain removal (Oil, dirt and grime)', 'Pre/post treatment for a longer lasting clean', 'Bright streak-free finish for curb appeal'],
     icon: FlatworkIcon,
   },
 }
@@ -167,13 +168,13 @@ export function Services() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="font-mono text-xs text-wave-blue-light uppercase tracking-[0.3em] mb-4 block">
-            // SERVICE_PROTOCOLS
+            // OUR CLEANING PROCESS
           </span>
           <h2 className="font-sans font-bold text-4xl md:text-5xl text-white mb-4">
             OUR SERVICES
           </h2>
           <p className="font-serif italic text-xl md:text-2xl text-concrete-gray">
-            Precision cleaning for every surface.
+            Pro cleaning tailored for East Texas homes.
           </p>
         </div>
 

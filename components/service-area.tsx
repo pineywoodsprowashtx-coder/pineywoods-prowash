@@ -1,21 +1,21 @@
 "use client"
 
 const sectors = [
-  { code: "SEC_01", name: "Nacogdoches" },
-  { code: "SEC_02", name: "Appleby" },
-  { code: "SEC_03", name: "Central Heights" },
-  { code: "SEC_04", name: "Garrison" },
-  { code: "SEC_05", name: "Lufkin" },
-  { code: "SEC_06", name: "Huntington" },
-  { code: "SEC_07", name: "Henderson" },
-  { code: "SEC_08", name: "Carthage" },
+  { code: "01", name: "Nacogdoches" },
+  { code: "02", name: "Appleby" },
+  { code: "03", name: "Central Heights" },
+  { code: "04", name: "Garrison" },
+  { code: "05", name: "Lufkin" },
+  { code: "06", name: "Huntington" },
+  { code: "07", name: "Henderson" },
+  { code: "08", name: "Carthage" },
 ]
 
 // Texas Star SVG - Blueprint/wireframe style
 function TexasStarWireframe() {
   return (
     <svg
-      className="absolute inset-0 w-full h-full opacity-[0.04]"
+      className="absolute inset-0 w-full h-full opacity-[0.13]"
       viewBox="0 0 200 200"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ export function ServiceArea() {
         <div className="text-center mb-16">
           {/* Technical Label */}
           <span className="font-mono text-xs text-signal-yellow tracking-[0.3em] uppercase mb-4 block">
-            // OPERATIONAL_SECTORS
+            // OPERATING AREA
           </span>
 
           {/* Headline */}
@@ -105,7 +105,7 @@ export function ServiceArea() {
                          transition-all duration-300 p-4 md:p-5"
             >
               {/* Technical Code */}
-              <span className="font-mono text-[10px] text-signal-yellow tracking-wider block mb-2">
+              <span className="font-mono text-[10px] text-wave-blue-light tracking-wider block mb-2">
                 [{sector.code}]
               </span>
               

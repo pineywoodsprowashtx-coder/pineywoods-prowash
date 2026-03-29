@@ -34,9 +34,9 @@ function StampIcon({ className }: { className?: string }) {
 }
 
 const capabilities = [
-  { label: "STATUS", value: "LICENSED_INSURED" },
-  { label: "SYSTEM", value: "ECO_SAFE" },
-  { label: "OFFER", value: "FREE_ESTIMATES" },
+  { label: "STATUS", value: "LICENSED & INSURED" },
+  { label: "SYSTEM", value: "PROFESSIONAL" },
+  { label: "OFFER", value: "FREE ESTIMATES" },
 ]
 
 export function RegionalAuthority() {
@@ -58,7 +58,7 @@ export function RegionalAuthority() {
             {/* Technical Label */}
             <div className="inline-block">
               <span className="font-mono text-sm text-signal-yellow tracking-widest">
-                {'// REGIONAL_AUTHORITY'}
+                {'// OUR IDENTITY'}
               </span>
             </div>
 

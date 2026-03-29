@@ -13,13 +13,13 @@ const faqItems = [
     id: "FAQ_02",
     question: "How often should I have my driveway cleaned?",
     answer:
-      "For the best curb appeal and to prevent permanent staining, we recommend a professional cleaning once a year. However, homes with heavy tree cover may benefit from every 6 months.",
+      "For the best curb appeal and to prevent permanent staining, we recommend a professional cleaning once a year. However, homes with heavy tree cover may benefit from every 8 months.",
   },
   {
     id: "FAQ_03",
-    question: "Are your cleaning solutions safe for my plants and pets?",
+    question: "Are your cleaning solutions safe for my plants ?",
     answer:
-      "Yes! We use eco-friendly, biodegradable professional-grade cleaners. We also pre-wet and post-rinse all surrounding vegetation to ensure your landscaping stays healthy.",
+      `We treat your landscaping like our own. Our professional-grade cleaning solutions eradicate mold and algae at the root, but they require expert handling to stay "plant-safe." That’s why we follow a rigorous Plant Protection Protocol: we thoroughly pre-soak all nearby foliage, apply specialized neutralizers during the process and finish with a deep fresh-water rinse. Your home gets a deep clean, and your plants stay green and healthy.`,
   },
   {
     id: "FAQ_04",
@@ -50,7 +50,7 @@ export function FAQ() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="font-mono text-xs text-signal-yellow uppercase tracking-[0.3em] mb-4 block">
-            {"// SUPPORT_DOCUMENTATION"}
+            {"// HOMEOWNER RESOURCES"}
           </span>
           <h2 className="font-sans font-bold text-4xl sm:text-5xl text-white uppercase tracking-tight">
             Common Questions
@@ -78,7 +78,7 @@ export function FAQ() {
                 >
                   <div className="flex items-center gap-4">
                     {/* Technical ID Label */}
-                    <span className="font-mono text-xs text-signal-yellow tracking-wider shrink-0">
+                    <span className="font-mono text-xs text-wave-blue-light tracking-wider shrink-0">
                       [{item.id}]
                     </span>
                     {/* Question Text */}

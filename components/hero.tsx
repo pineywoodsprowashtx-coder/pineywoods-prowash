@@ -135,11 +135,7 @@ export function Hero() {
       {/* Bottom Gradient Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-charcoal to-transparent z-10" />
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
-        <span className="font-mono text-[10px] text-concrete uppercase tracking-widest">Scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-concrete to-transparent animate-pulse" />
-      </div>
+      
 
       {/* Additional film grain on top */}
       <div 

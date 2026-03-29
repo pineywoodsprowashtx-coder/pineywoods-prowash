@@ -8,10 +8,10 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl">
-      <div className="relative flex items-center justify-between px-3 py-2 md:px-6 md:py-3 rounded-full bg-charcoal/80 backdrop-blur-xl border border-concrete/20">
+      <div className="relative flex items-center justify-between px-3 py-1 md:px-6 md:py-1.5 rounded-full bg-charcoal/80 backdrop-blur-xl border border-concrete/20">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3">
-          <div className="relative w-10 h-10 md:w-12 md:h-12">
+          <div className="relative w-13 h-13 md:w-18 md:h-18">
             <Image
               src="/logo.svg"
               alt="Pineywoods ProWash"
@@ -24,7 +24,7 @@ export function Navbar() {
             <span className="font-sans font-bold text-foreground text-sm md:text-base tracking-tight">
               PINEYWOODS
             </span>
-            <span className="font-mono text-wave-blue-light text-[10px] md:text-xs block -mt-1 tracking-wider">
+            <span className="font-mono text-signal-yellow text-[10px] md:text-xs block -mt-1 tracking-wider">
               PROWASH
             </span>
           </div>

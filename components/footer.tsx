@@ -43,7 +43,7 @@ export function Footer() {
 
             {/* Tagline */}
             <p className="font-mono text-xs text-concrete-gray max-w-xs">
-              Pride in the Pines
+            Supporting our Veterans, Seniors and First Responders with Special Pricing
             </p>
           </div>
 

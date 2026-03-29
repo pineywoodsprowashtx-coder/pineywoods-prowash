@@ -66,7 +66,7 @@ export function QuoteForm() {
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="font-mono text-xs text-signal-yellow tracking-[0.3em] uppercase">
-            // DISPATCH_TERMINAL
+            // DISPATCH
           </span>
         </div>
 
@@ -91,7 +91,7 @@ export function QuoteForm() {
                     REQUEST A FREE QUOTE
                   </h2>
                   <p className="font-mono text-xs sm:text-sm text-concrete-gray">
-                    Fill out the form below and we'll get you CLEANED. RESTORED. PROTECTED.
+                    Fill out the form below and we'll get you Cleaned, Restored & Protected
                   </p>
                 </div>
 
@@ -99,7 +99,7 @@ export function QuoteForm() {
                   {/* Name */}
                   <div>
                     <label className="block font-mono text-xs text-wave-blue-light uppercase tracking-wider mb-2">
-                      [FIELD_01] NAME
+                      [NAME]
                     </label>
                     <input
                       type="text"
@@ -107,7 +107,7 @@ export function QuoteForm() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full bg-charcoal border border-concrete-gray/30 rounded-lg px-4 py-3 font-sans text-white placeholder:text-concrete-gray/50 focus:outline-none focus:border-signal-yellow/50 transition-colors"
-                      placeholder="Your full name"
+                      placeholder="Your name"
                       required
                     />
                   </div>
@@ -115,7 +115,7 @@ export function QuoteForm() {
                   {/* Phone */}
                   <div>
                     <label className="block font-mono text-xs text-wave-blue-light uppercase tracking-wider mb-2">
-                      [FIELD_02] PHONE
+                      [PHONE]
                     </label>
                     <input
                       type="tel"
@@ -131,7 +131,7 @@ export function QuoteForm() {
                   {/* Email */}
                   <div>
                     <label className="block font-mono text-xs text-wave-blue-light uppercase tracking-wider mb-2">
-                      [FIELD_03] EMAIL
+                      [EMAIL]
                     </label>
                     <input
                       type="email"
@@ -147,7 +147,7 @@ export function QuoteForm() {
                   {/* Address */}
                   <div>
                     <label className="block font-mono text-xs text-wave-blue-light uppercase tracking-wider mb-2">
-                      [FIELD_04] ADDRESS
+                      [ADDRESS]
                     </label>
                     <input
                       type="text"
@@ -155,7 +155,7 @@ export function QuoteForm() {
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                       className="w-full bg-charcoal border border-concrete-gray/30 rounded-lg px-4 py-3 font-sans text-white placeholder:text-concrete-gray/50 focus:outline-none focus:border-signal-yellow/50 transition-colors"
-                      placeholder="123 Main St,  Anytown, TX"
+                      placeholder="123 Main St, TX"
                       required
                     />
                   </div>
@@ -163,7 +163,7 @@ export function QuoteForm() {
                   {/* Service */}
                   <div>
                     <label className="block font-mono text-xs text-wave-blue-light uppercase tracking-wider mb-2">
-                      [FIELD_05] SERVICE INTERESTED IN
+                      [SERVICE] 
                     </label>
                     <select
                       name="service"
@@ -190,7 +190,7 @@ export function QuoteForm() {
                   {/* Anything Else */}
                   <div>
                     <label className="block font-mono text-xs text-wave-blue-light uppercase tracking-wider mb-2">
-                      [FIELD_06] ANYTHING ELSE WE SHOULD KNOW?
+                      [ADDITIONAL INFORMATION]
                     </label>
                     <textarea
                       name="notes"
@@ -198,7 +198,7 @@ export function QuoteForm() {
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       className="w-full bg-charcoal border border-concrete-gray/30 rounded-lg px-4 py-3 font-sans text-white placeholder:text-concrete-gray/50 focus:outline-none focus:border-signal-yellow/50 transition-colors resize-none"
-                      placeholder="e.g., House is two stories, driveway needs cleaning..."
+                      placeholder="Please include property details: number of stories, specific areas of concern (algae/oil), or any delicate landscaping we should protect..."
                     />
                   </div>
 
@@ -221,7 +221,7 @@ export function QuoteForm() {
 
             <div className="mt-6 text-center">
               <p className="font-mono text-[10px] text-concrete-gray/60 uppercase tracking-wider">
-                [ENCRYPTED] Your data is protected and never shared
+                [DATA PROTECTED]
               </p>
             </div>
           </div>
