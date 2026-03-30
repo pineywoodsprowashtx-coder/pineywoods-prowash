@@ -43,7 +43,7 @@ export function Footer() {
 
             {/* Tagline */}
             <p className="font-mono text-xs text-concrete-gray max-w-xs">
-            Supporting our Veterans, Seniors and First Responders with Special Pricing
+            Supporting our Veterans, First Responders and Seniors with Special Pricing
             </p>
           </div>
 
@@ -102,11 +102,14 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-concrete-gray/20">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="font-mono text-xs text-concrete-gray/70 mb-2">
+  Serving Nacogdoches, Lufkin & East Texas Pineywoods
+</p>
             <p className="font-mono text-xs text-concrete-gray/50">
               © {currentYear} PINEYWOODS PROWASH. ALL RIGHTS RESERVED.
             </p>
             <p className="font-mono text-[10px] text-concrete-gray/40 uppercase tracking-wider">
-              [SYS_VER: 2.0.1] • Nacogdoches, TX
+              [SYS_VER: 3.0.0] • Nacogdoches, TX
             </p>
           </div>
         </div>

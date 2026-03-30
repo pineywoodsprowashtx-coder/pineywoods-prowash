@@ -121,7 +121,7 @@ const serviceData = {
     subtitle: 'Exterior Soft Wash System',
     description:
 
-      `Our professional house washing service is designed to restore the beauty and cleanliness of your home's exterior. Over time, dirt, grime, algae, and other contaminants can accumulate on the surfaces, making your house look dull and uninviting. Here at Pineywoods ProWash, we employ state-of-the-art cleaning equipment and cleaning solutions to effectively remove these stubborn stains, giving your house a fresh and revitalized appearance.`,
+      `Restore your home’s beauty with our professional house washing. We use state-of-the-art equipment and specialized cleaning solutions to effectively remove stubborn stains and give your house a fresh, revitalized appearance.`,
     specs: ['Safe for all siding, paint and windows', 'Kills mold and algae at the root', 'Cleaning with science, not high pressure'],
     icon: HouseIcon,
   },
@@ -129,7 +129,7 @@ const serviceData = {
     title: 'ROOF CLEANING',
     subtitle: 'Dedicated Soft Wash Treatment',
     description:
-      `Our professional roof washing service is designed to restore the beauty and integrity of your roof while protecting your investment. Over time, roofs can accumulate debris, moss, algae, lichen, and other unsightly and potentially damaging substances. We utilize the highest quality cleaning solutions to effectively remove these contaminants, restoring your roof and extending its lifespan.`,
+      `Professional roof washing restores beauty and protects your investment. We eliminate moss and algae at the root, solving the problem for the long term and extending your roof’s lifespan with a dedicated soft wash treatment.`,
     specs: ['Safely removes those stubborn black streaks', 'Professional - grade chemical treatment - not just a rinse', 'Extends the lifespan of your shingles'],
     icon: RoofIcon,
   },
@@ -137,7 +137,7 @@ const serviceData = {
     title: 'CONCRETE & DRIVEWAY CLEANING',
     subtitle: 'PRO Grade Surface Cleaning',
     description:
-      `Our professional surface cleaning services are designed to restore the beauty and safety of your concrete, brick, and stone surfaces. Over time, surfaces can accumulate dirt, grime, oil stains, mold, algae, and other contaminants. We utilize state-of-the-art cleaning equipment and specialized cleaning solutions to effectively remove these stubborn stains, giving your outdoor areas a fresh and revitalized appearance.`,
+      `Professional surface cleaning for driveways, walkways and patios. We effectively remove stubborn oil stains, dirt and algae from concrete and stone, restoring safety and curb appeal with a precision, high-grade clean.`,
     specs: ['Deep stain removal (Oil, dirt and grime)', 'Pre/post treatment for a longer lasting clean', 'Bright streak-free finish for curb appeal'],
     icon: FlatworkIcon,
   },
@@ -167,7 +167,7 @@ export function Services() {
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="font-mono text-xs text-wave-blue-light uppercase tracking-[0.3em] mb-4 block">
+          <span className="font-mono text-xs text-signal-yellow uppercase tracking-[0.3em] mb-4 block">
             // OUR CLEANING PROCESS
           </span>
           <h2 className="font-sans font-bold text-4xl md:text-5xl text-white mb-4">

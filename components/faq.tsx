@@ -19,7 +19,7 @@ const faqItems = [
     id: "FAQ_03",
     question: "Are your cleaning solutions safe for my plants ?",
     answer:
-      `We treat your landscaping like our own. Our professional-grade cleaning solutions eradicate mold and algae at the root, but they require expert handling to stay "plant-safe." That’s why we follow a rigorous Plant Protection Protocol: we thoroughly pre-soak all nearby foliage, apply specialized neutralizers during the process and finish with a deep fresh-water rinse. Your home gets a deep clean, and your plants stay green and healthy.`,
+      `We treat your landscaping like our own. Our solutions kill algae at the root but require expert handling. We follow a rigorous Plant Protection Protocol: pre-soaking foliage, applying specialized neutralizers and finishing with a deep fresh-water rinse. Your home gets a deep clean and your plants stay green and healthy.`,
   },
   {
     id: "FAQ_04",
@@ -124,7 +124,7 @@ export function FAQ() {
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
           <p className="font-mono text-xs text-concrete-gray uppercase tracking-widest mb-4">
-            {"// ADDITIONAL_INQUIRIES"}
+            
           </p>
           <p className="font-sans text-white mb-6">
             Have a question not listed here?

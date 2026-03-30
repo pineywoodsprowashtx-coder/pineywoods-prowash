@@ -35,7 +35,7 @@ export function Navbar() {
           <a href="tel:+19033920818"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="magnetic-btn relative px-4 py-2 md:px-6 md:py-2.5 bg-signal-yellow text-charcoal font-sans font-bold text-xs md:text-sm rounded-full uppercase tracking-wide"
+          className="magnetic-btn relative px-4 py-2 md:px-6 md:py-2.5 bg-white text-black font-sans font-bold text-xs md:text-sm rounded-full uppercase tracking-wide"
         >
           <span className="relative z-10">Call Now</span>
           <div

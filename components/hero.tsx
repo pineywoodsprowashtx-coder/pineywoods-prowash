@@ -71,14 +71,14 @@ export function Hero() {
               Restoring the
             </span>
             <span className="block font-serif italic text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-foreground mt-2 md:mt-4 text-balance">
-              Oldest Town in Texas.
+              Oldest Town in Texas
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="max-w-xl mx-auto mb-10 font-sans text-concrete text-base sm:text-lg leading-relaxed">
-            Professional pressure washing services restoring homes and businesses to their original glory. 
-            <span className="text-wave-blue-light"> Built for East Texas weather.</span>
+            <span className="font-bold text-signal-yellow">Professional pressure washing services</span> restoring homes and businesses to their original glory. 
+            <span className="text-wave-blue-light"> Nacogdoches Residential & Commercial Exterior Cleaner.</span>
           </p>
 
           {/* CTA Button */}
