@@ -129,7 +129,7 @@ const serviceData = {
     title: 'ROOF CLEANING',
     subtitle: 'Dedicated Soft Wash Treatment',
     description:
-      `Professional roof washing restores beauty and protects your investment. We eliminate moss and algae at the root, solving the problem for the long term and extending your roof’s lifespan with a dedicated soft wash treatment.`,
+      `Professional roof washing restores beauty and protects your investment. We eliminate moss and algae at the root, solving the problem for the long term and extending your roof’s lifespan.`,
     specs: ['Safely removes those stubborn black streaks', 'Professional - grade chemical treatment - not just a rinse', 'Extends the lifespan of your shingles'],
     icon: RoofIcon,
   },

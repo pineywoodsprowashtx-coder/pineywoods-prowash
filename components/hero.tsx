@@ -78,7 +78,7 @@ export function Hero() {
           {/* Subheadline */}
           <p className="max-w-xl mx-auto mb-10 font-sans text-concrete text-base sm:text-lg leading-relaxed">
             <span className="font-bold text-signal-yellow">Professional pressure washing services</span> restoring homes and businesses to their original glory. 
-            <span className="text-wave-blue-light"> Nacogdoches Residential & Commercial Exterior Cleaner.</span>
+            <span className="text-wave-blue-light"> Nacogdoches Residential & Commercial Exterior Cleaning</span>
           </p>
 
           {/* CTA Button */}

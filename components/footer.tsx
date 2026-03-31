@@ -109,7 +109,7 @@ export function Footer() {
               © {currentYear} PINEYWOODS PROWASH. ALL RIGHTS RESERVED.
             </p>
             <p className="font-mono text-[10px] text-concrete-gray/40 uppercase tracking-wider">
-              [SYS_VER: 3.0.0] • Nacogdoches, TX
+              [SYS_VER: 3.0.1] • Nacogdoches, TX
             </p>
           </div>
         </div>
