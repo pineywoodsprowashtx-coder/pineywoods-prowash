@@ -1,5 +1,6 @@
 'use client'
 
+// About section component
 export function About() {
   return (
     <section id="about" className="relative py-24 bg-concrete overflow-hidden">

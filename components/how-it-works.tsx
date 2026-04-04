@@ -1,5 +1,6 @@
 'use client'
 
+// How it works section component
 const steps = [
   {
     number: '01',
