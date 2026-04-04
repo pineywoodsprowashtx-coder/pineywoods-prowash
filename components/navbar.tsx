@@ -5,13 +5,14 @@ import { useState } from 'react'
 
 export function Navbar() {
   const [isHovered, setIsHovered] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl">
-      <div className="relative flex items-center justify-between px-3 py-1 md:px-6 md:py-1.5 rounded-full bg-charcoal/80 backdrop-blur-xl border border-concrete/20">
+      <div className="relative flex items-center justify-between px-3 py-1 md:px-6 md:py-1.5 rounded-full bg-concrete-light/80 backdrop-blur-xl border border-wave-blue-mid/20">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3">
-          <div className="relative w-13 h-13 md:w-18 md:h-18">
+          <div className="relative w-12 h-12 md:w-14 md:h-14">
             <Image
               src="/logo.svg"
               alt="Pineywoods ProWash"
@@ -21,25 +22,45 @@ export function Navbar() {
             />
           </div>
           <div className="hidden sm:block">
-            <span className="font-sans font-bold text-foreground text-sm md:text-base tracking-tight">
+            <span className="font-sans font-bold text-deep-navy text-sm md:text-base tracking-tight">
               PINEYWOODS
             </span>
-            <span className="font-mono text-signal-yellow text-[10px] md:text-xs block -mt-1 tracking-wider">
+            <span className="font-mono text-signal-gold text-[10px] md:text-xs block -mt-1 tracking-wider">
               PROWASH
             </span>
           </div>
         </a>
 
-        {/* CTA Button */}
-        
-          <a href="tel:+19033920818"
+        {/* Mobile Hamburger */}
+        <button 
+          className="md:hidden p-2 text-deep-navy"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg 
+            className="w-6 h-6" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            {isMobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+
+        {/* CTA Button - Desktop */}
+        <a 
+          href="tel:+19033920818"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="magnetic-btn relative px-4 py-2 md:px-6 md:py-2.5 bg-white text-black font-sans font-bold text-xs md:text-sm rounded-full uppercase tracking-wide"
+          className="magnetic-btn hidden md:flex relative px-4 py-2 md:px-6 md:py-2.5 bg-deep-navy text-signal-gold font-sans font-bold text-xs md:text-sm rounded-sm uppercase tracking-wide"
         >
           <span className="relative z-10">Call Now</span>
           <div
-            className={`absolute inset-0 rounded-full bg-signal-yellow-hover transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute inset-0 rounded-sm bg-deep-navy/90 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
           />
         </a>
 
@@ -53,6 +74,18 @@ export function Navbar() {
           />
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden mt-2 p-4 rounded-xl bg-concrete-light/95 backdrop-blur-xl border border-wave-blue-mid/20">
+          <a 
+            href="tel:+19033920818"
+            className="block w-full py-3 px-4 bg-deep-navy text-signal-gold font-sans font-bold text-sm rounded-sm uppercase tracking-wide text-center"
+          >
+            Call Now
+          </a>
+        </div>
+      )}
     </nav>
   )
 }

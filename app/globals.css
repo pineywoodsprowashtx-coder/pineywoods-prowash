@@ -1,48 +1,49 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  /* Brutalist Foundation */
-  --background: #111111;
-  --foreground: #fefefe;
-  --charcoal: #111111;
-  --concrete: #8A8D8F;
+  /* Concrete & Grain Light Mode Foundation */
+  --background: #E5E4E2;
+  --foreground: #001F3F;
+  --concrete: #E5E4E2;
+  --concrete-light: #F5F4F2;
   
-  /* Signal Yellow - from logo */
-  --signal-yellow: #f5c200;
-  --signal-yellow-hover: #d9ab00;
+  /* Signal Gold - primary accent */
+  --signal-gold: #FFD700;
+  --signal-gold-hover: #E5C200;
   
   /* Wave Blues - from logo */
   --wave-blue-dark: #203c54;
-  --wave-blue-mid: #27597c;
+  --wave-blue-mid: #5B8DB8;
   --wave-blue-light: #579eca;
   
+  /* Deep Navy - primary text */
+  --deep-navy: #001F3F;
+  
   /* Semantic tokens */
-  --card: #1a1a1a;
-  --card-foreground: #fefefe;
-  --popover: #1a1a1a;
-  --popover-foreground: #fefefe;
-  --primary: #f5c200;
-  --primary-foreground: #111111;
-  --secondary: #8A8D8F;
-  --secondary-foreground: #111111;
-  --muted: #2a2a2a;
-  --muted-foreground: #8A8D8F;
-  --accent: #579eca;
-  --accent-foreground: #111111;
+  --card: #F5F4F2;
+  --card-foreground: #001F3F;
+  --popover: #F5F4F2;
+  --popover-foreground: #001F3F;
+  --primary: #FFD700;
+  --primary-foreground: #001F3F;
+  --secondary: #5B8DB8;
+  --secondary-foreground: #001F3F;
+  --muted: #E5E4E2;
+  --muted-foreground: #5B8DB8;
+  --accent: #5B8DB8;
+  --accent-foreground: #001F3F;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #2a2a2a;
-  --input: #2a2a2a;
-  --ring: #f5c200;
-  --radius: 0.625rem;
+  --border: #5B8DB8/20;
+  --input: #E5E4E2;
+  --ring: #FFD700;
+  --radius: 0.25rem;
 }
 
 @theme inline {
-  --font-sans: var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif;
-  --font-serif: var(--font-dm-serif), 'DM Serif Display', Georgia, serif;
+  --font-sans: var(--font-barlow-condensed), 'Barlow Condensed', system-ui, sans-serif;
+  --font-serif: var(--font-playfair), 'Playfair Display', Georgia, serif;
   --font-mono: var(--font-space-mono), 'Space Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -63,19 +64,20 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
   
   /* Custom colors */
-  --color-charcoal: var(--charcoal);
   --color-concrete: var(--concrete);
-  --color-signal-yellow: var(--signal-yellow);
-  --color-signal-yellow-hover: var(--signal-yellow-hover);
+  --color-concrete-light: var(--concrete-light);
+  --color-signal-gold: var(--signal-gold);
+  --color-signal-gold-hover: var(--signal-gold-hover);
   --color-wave-blue-dark: var(--wave-blue-dark);
   --color-wave-blue-mid: var(--wave-blue-mid);
   --color-wave-blue-light: var(--wave-blue-light);
+  --color-deep-navy: var(--deep-navy);
 }
 
 @layer base {
@@ -87,7 +89,7 @@
   }
 }
 
-/* Film grain noise overlay */
+/* Film grain noise overlay - reduced opacity for light mode */
 .film-grain {
   position: relative;
 }
@@ -97,7 +99,7 @@
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.05;
+  opacity: 0.03;
   pointer-events: none;
   z-index: 50;
 }
@@ -109,7 +111,7 @@
 
 .magnetic-btn:hover {
   transform: scale(1.02) translateY(-2px);
-  box-shadow: 0 10px 40px -10px rgba(245, 194, 0, 0.5);
+  box-shadow: 0 10px 40px -10px rgba(255, 215, 0, 0.5);
 }
 
 .magnetic-btn:active {

@@ -1,18 +1,18 @@
 import type { Metadata, Viewport } from 'next'
-import { Space_Grotesk, DM_Serif_Display, Space_Mono } from 'next/font/google'
+import { Barlow_Condensed, Playfair_Display, Space_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const spaceGrotesk = Space_Grotesk({ 
+const barlowCondensed = Barlow_Condensed({ 
   subsets: ["latin"],
-  variable: '--font-space-grotesk',
+  variable: '--font-barlow-condensed',
   weight: ['400', '500', '600', '700']
 })
 
-const dmSerifDisplay = DM_Serif_Display({ 
+const playfairDisplay = Playfair_Display({ 
   subsets: ["latin"],
-  variable: '--font-dm-serif',
-  weight: ['400'],
+  variable: '--font-playfair',
+  weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic']
 })
 
@@ -24,12 +24,12 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   title: 'Pineywoods ProWash | Professional Pressure Washing in East Texas',
-  description: 'Restoring the oldest town in Texas. Professional pressure washing services for homes and businesses in Nacogdoches and surrounding areas.',
+  description: 'Professional soft wash and pressure washing in Nacogdoches, TX. House washing, concrete cleaning, and gutter cleaning for East Texas homes.',
   generator: 'v0.app',
 }
 
 export const viewport: Viewport = {
-  themeColor: '#111111',
+  themeColor: '#E5E4E2',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.variable} ${dmSerifDisplay.variable} ${spaceMono.variable} font-sans antialiased`}>
+      <body className={`${barlowCondensed.variable} ${playfairDisplay.variable} ${spaceMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
