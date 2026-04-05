@@ -16,42 +16,44 @@ export function About() {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <h2 className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl text-deep-navy uppercase tracking-tight">
+            <h2 className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl text-[#001F3F] uppercase tracking-tight">
               The &ldquo;Pineywoods ProWash&rdquo; Story
             </h2>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
-            <div className="space-y-6">
-              <p className="font-sans text-lg text-deep-navy/80 leading-relaxed">
-                My mother was born and raised in Nacogdoches. I grew up in Houston, but I spent many summers here — at my grandparents&apos; house, surrounded by the pine trees and the slower pace of East Texas. This town was special, even when I lived somewhere else.
-              </p>
-              
-              <p className="font-sans text-lg text-deep-navy/80 leading-relaxed">
-                In 2022, life called me back.
-              </p>
-              
-              <p className="font-sans text-lg text-deep-navy/80 leading-relaxed">
-                My mom needed me. I left behind the life I had built. It was not an easy choice, but it was the right one.
-              </p>
-              
-              <p className="font-serif italic text-xl text-deep-navy leading-relaxed">
-                I came home for my Mom. I built Pineywoods ProWash. And they&apos;re worth staying for.
-              </p>
-              
-              <p className="font-sans text-lg text-deep-navy/80 leading-relaxed">
-                Today, we keep Nacogdoches homes and businesses looking their best.
-              </p>
+            {/* Text Content - Dark Navy Card */}
+            <div className="bg-[#001F3F] border-l-[3px] border-l-[#FFD700] rounded-sm p-6 sm:p-8">
+              <div className="space-y-5">
+                <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
+                  My mother was born and raised in Nacogdoches. I grew up in Houston, but I spent many summers here — at my grandparents&apos; house, surrounded by the pine trees and the slower pace of East Texas. This town was special, even when I lived somewhere else.
+                </p>
+                
+                <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
+                  In 2022, life called me back.
+                </p>
+                
+                <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
+                  My mom needed me. I left behind the life I had built. It was not an easy choice, but it was the right one.
+                </p>
+                
+                <p className="font-serif italic text-lg text-[#FFD700] leading-relaxed">
+                  I came home for my Mom. I built Pineywoods ProWash. And they&apos;re worth staying for.
+                </p>
+                
+                <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
+                  Today, we keep Nacogdoches homes and businesses looking their best.
+                </p>
+              </div>
             </div>
 
             {/* Owner Photo Placeholder */}
             <div className="relative">
-              <div className="aspect-[4/5] bg-concrete-light border-2 border-dashed border-wave-blue-mid/30 rounded-sm flex items-center justify-center">
+              <div className="aspect-[4/5] bg-[#001F3F] border-2 border-dashed border-[#FFD700] rounded-sm flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-wave-blue-mid/10 flex items-center justify-center">
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#5B8DB8]/20 flex items-center justify-center">
                     <svg 
-                      className="w-12 h-12 text-wave-blue-mid/40" 
+                      className="w-12 h-12 text-[#5B8DB8]" 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -59,15 +61,15 @@ export function About() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
-                  <p className="font-mono text-sm text-wave-blue-mid/60 uppercase tracking-wider">
+                  <p className="font-mono text-sm text-[#5B8DB8] uppercase tracking-wider">
                     [ OWNER PHOTO — add in Cursor ]
                   </p>
                 </div>
               </div>
               
               {/* Corner accents */}
-              <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-signal-gold/40" />
-              <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-signal-gold/40" />
+              <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-[#FFD700]/40" />
+              <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-[#FFD700]/40" />
             </div>
           </div>
         </div>

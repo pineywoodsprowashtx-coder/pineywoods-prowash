@@ -1,19 +1,19 @@
 'use client'
 
 const cities = [
-  'Nacogdoches',
-  'Appleby',
-  'Central Heights',
-  'Garrison',
-  'Lufkin',
-  'Huntington',
-  'Henderson',
-  'Carthage',
+  { name: 'Nacogdoches', isHQ: true },
+  { name: 'Appleby', isHQ: false },
+  { name: 'Central Heights', isHQ: false },
+  { name: 'Garrison', isHQ: false },
+  { name: 'Lufkin', isHQ: false },
+  { name: 'Huntington', isHQ: false },
+  { name: 'Henderson', isHQ: false },
+  { name: 'Carthage', isHQ: false },
 ]
 
 export function ServiceArea() {
   return (
-    <section id="service-area" className="relative py-24 bg-concrete-light overflow-hidden">
+    <section id="service-area" className="relative py-24 bg-concrete overflow-hidden">
       {/* Film grain overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none z-10"
@@ -25,31 +25,45 @@ export function ServiceArea() {
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="font-sans font-bold text-4xl md:text-5xl text-deep-navy uppercase mb-4">
+          <h2 className="font-sans font-bold text-4xl md:text-5xl text-[#001F3F] uppercase mb-4">
             SERVICE AREA
           </h2>
-          <p className="font-serif italic text-xl md:text-2xl text-deep-navy/70">
+          <p className="font-serif italic text-xl md:text-2xl text-[#5B8DB8]">
             Proudly serving Nacogdoches and the surrounding region.
           </p>
         </div>
 
-        {/* Cities List */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <p className="font-sans text-lg text-deep-navy/80">
-            {cities.map((city, index) => (
-              <span key={city}>
-                <span className="font-medium">{city}</span>
-                {index < cities.length - 1 && (
-                  <span className="text-signal-gold mx-2">&middot;</span>
+        {/* City Cards Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+          {cities.map((city, index) => {
+            const number = String(index + 1).padStart(2, '0')
+            return (
+              <div
+                key={city.name}
+                className={`
+                  bg-[#001F3F] rounded-sm p-4 
+                  ${city.isHQ ? 'border border-[#FFD700]' : 'border border-[#5B8DB8]'}
+                `}
+              >
+                <span className="font-mono text-xs text-[#5B8DB8] block mb-1">
+                  [{number}]
+                </span>
+                <span className="font-sans font-bold text-[#F5F4F2]">
+                  {city.name}
+                </span>
+                {city.isHQ && (
+                  <span className="font-mono text-[10px] text-[#FFD700] block mt-1 uppercase tracking-wider">
+                    HQ
+                  </span>
                 )}
-              </span>
-            ))}
-          </p>
+              </div>
+            )
+          })}
         </div>
 
         {/* Body Text */}
         <div className="max-w-2xl mx-auto text-center">
-          <p className="font-sans text-deep-navy/70 leading-relaxed">
+          <p className="font-sans text-[#001F3F] leading-relaxed">
             We&apos;re based right here in Nacogdoches and we serve a 50+ mile radius across East Texas. If you&apos;re not sure whether we cover your area, just reach out. Chances are we do.
           </p>
         </div>

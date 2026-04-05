@@ -209,27 +209,27 @@ export function Services() {
             return (
               <div
                 key={key}
-                className="group relative bg-concrete-light border border-wave-blue-mid/20 rounded-sm p-6 sm:p-8 text-left transition-all duration-300 hover:border-signal-gold/50"
+                className="group relative bg-[#001F3F] border border-[#FFD700]/30 rounded-sm p-6 sm:p-8 text-left transition-all duration-300 hover:border-[#FFD700]/60"
               >
                 {/* Coming Soon Badge */}
                 {service.comingSoon && (
-                  <div className="absolute top-4 right-4 px-2 py-1 bg-wave-blue-mid/20 rounded-sm">
-                    <span className="font-mono text-[10px] text-wave-blue-mid uppercase tracking-wider">Coming 2027</span>
+                  <div className="absolute top-4 right-4 px-2 py-1 bg-[#FFD700] rounded-sm">
+                    <span className="font-mono text-[10px] text-[#001F3F] uppercase tracking-wider font-bold">Coming 2027</span>
                   </div>
                 )}
 
                 {/* Icon */}
                 <div className="mb-4">
-                  <IconComponent className="w-14 h-14 text-signal-gold transition-transform duration-300 group-hover:scale-110" />
+                  <IconComponent className="w-14 h-14 text-[#FFD700] transition-transform duration-300 group-hover:scale-110" />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-sans font-bold text-xl text-deep-navy mb-2 group-hover:text-signal-gold transition-colors">
+                <h3 className="font-sans font-bold text-xl text-[#FFD700] mb-2">
                   {service.title}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="font-serif italic text-sm text-deep-navy/70 mb-4">
+                <p className="font-serif italic text-sm text-[#5B8DB8] mb-4">
                   {service.subtitle}
                 </p>
 
@@ -238,9 +238,9 @@ export function Services() {
                   {service.bullets.map((bullet, index) => (
                     <li
                       key={index}
-                      className="font-sans text-sm text-deep-navy/80 flex items-start gap-2"
+                      className="font-sans text-sm text-[#F5F4F2] flex items-start gap-2"
                     >
-                      <span className="w-1.5 h-1.5 bg-signal-gold rounded-full mt-1.5 shrink-0" />
+                      <span className="w-1.5 h-1.5 bg-[#FFD700] rounded-full mt-1.5 shrink-0" />
                       {bullet}
                     </li>
                   ))}
@@ -249,7 +249,7 @@ export function Services() {
                 {/* Tap for Details Button */}
                 <button
                   onClick={() => toggleExpand(key)}
-                  className="font-mono text-xs text-wave-blue-mid uppercase tracking-wider hover:text-signal-gold transition-colors flex items-center gap-2"
+                  className="font-mono text-xs text-[#FFD700] uppercase tracking-wider hover:text-[#FFD700]/80 transition-colors flex items-center gap-2"
                 >
                   {service.cta}
                   <svg 
@@ -268,13 +268,13 @@ export function Services() {
                     isExpanded ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="border-t border-wave-blue-mid/20 pt-6">
-                    <p className="font-sans text-sm text-deep-navy/80 leading-relaxed mb-6">
+                  <div className="border-t border-[#FFD700]/30 pt-6">
+                    <p className="font-sans text-sm text-[#F5F4F2]/80 leading-relaxed mb-6">
                       {service.expanded}
                     </p>
                     <button
                       onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                      className="px-6 py-3 bg-signal-gold text-deep-navy font-sans font-bold text-sm uppercase tracking-wider rounded-sm hover:bg-signal-gold-hover transition-colors"
+                      className="px-6 py-3 bg-[#FFD700] text-[#001F3F] font-sans font-bold text-sm uppercase tracking-wider rounded-sm hover:bg-[#FFD700]/90 transition-colors"
                     >
                       {service.expandedCta}
                     </button>
