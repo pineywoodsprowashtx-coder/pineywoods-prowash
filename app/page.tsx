@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
+import { SeeTheDifference } from '@/components/see-the-difference'
 import { Services } from '@/components/services'
 import { HowItWorks } from '@/components/how-it-works'
 import { About } from '@/components/about'
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="min-h-screen bg-concrete">
       <Navbar />
       <Hero />
+      <SeeTheDifference />
       <Services />
       <HowItWorks />
       <About />

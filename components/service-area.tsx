@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 const cities = [
   { name: 'Nacogdoches', isHQ: true },
   { name: 'Appleby', isHQ: false },
@@ -12,6 +14,8 @@ const cities = [
 ]
 
 export function ServiceArea() {
+  const [selectedCity, setSelectedCity] = useState('Nacogdoches')
+
   return (
     <section id="service-area" className="relative py-24 bg-concrete overflow-hidden">
       {/* Film grain overlay */}
@@ -37,12 +41,15 @@ export function ServiceArea() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
           {cities.map((city, index) => {
             const number = String(index + 1).padStart(2, '0')
+            const isSelected = selectedCity === city.name
             return (
-              <div
+              <button
                 key={city.name}
+                onClick={() => setSelectedCity(city.name)}
                 className={`
-                  bg-[#001F3F] rounded-sm p-4 
-                  ${city.isHQ ? 'border border-[#FFD700]' : 'border border-[#5B8DB8]'}
+                  bg-[#001F3F] rounded-sm p-4 text-left transition-all duration-200
+                  ${isSelected ? 'border-2 border-[#FFD700]' : 'border border-[#5B8DB8]'}
+                  hover:border-[#FFD700]/60
                 `}
               >
                 <span className="font-mono text-xs text-[#5B8DB8] block mb-1">
@@ -56,7 +63,7 @@ export function ServiceArea() {
                     HQ
                   </span>
                 )}
-              </div>
+              </button>
             )
           })}
         </div>

@@ -133,60 +133,161 @@
   animation-delay: 0.5s;
 }
 
-/* Single pass animation - runs 4 times then locks on dark/dirty state */
+/* Wiper animation - runs 4 passes then locks on CLEAN side */
 @keyframes reveal-pass {
   0% {
     clip-path: inset(0 100% 0 0);
   }
-  45% {
+  /* Pass 1: reveal clean */
+  12.5% {
     clip-path: inset(0 0% 0 0);
   }
-  55% {
-    clip-path: inset(0 0% 0 0);
-  }
-  100% {
+  /* Pass 1: hide clean */
+  25% {
     clip-path: inset(0 100% 0 0);
+  }
+  /* Pass 2: reveal clean */
+  37.5% {
+    clip-path: inset(0 0% 0 0);
+  }
+  /* Pass 2: hide clean */
+  50% {
+    clip-path: inset(0 100% 0 0);
+  }
+  /* Pass 3: reveal clean */
+  62.5% {
+    clip-path: inset(0 0% 0 0);
+  }
+  /* Pass 3: hide clean */
+  75% {
+    clip-path: inset(0 100% 0 0);
+  }
+  /* Pass 4: reveal clean and STAY */
+  87.5%, 100% {
+    clip-path: inset(0 0% 0 0);
   }
 }
 
 @keyframes move-line-pass {
   0% {
     left: 0%;
-    opacity: 0;
-  }
-  5% {
     opacity: 1;
   }
-  45% {
+  /* Pass 1 */
+  12.5% {
     left: 100%;
     opacity: 1;
   }
+  12.6% {
+    left: 100%;
+    opacity: 0;
+  }
+  12.7% {
+    left: 0%;
+    opacity: 0;
+  }
+  12.8% {
+    left: 0%;
+    opacity: 1;
+  }
+  /* Pass 2 */
+  25% {
+    left: 100%;
+    opacity: 1;
+  }
+  25.1% {
+    left: 100%;
+    opacity: 0;
+  }
+  25.2% {
+    left: 0%;
+    opacity: 0;
+  }
+  25.3% {
+    left: 0%;
+    opacity: 1;
+  }
+  37.5% {
+    left: 100%;
+    opacity: 1;
+  }
+  37.6% {
+    left: 100%;
+    opacity: 0;
+  }
+  37.7% {
+    left: 0%;
+    opacity: 0;
+  }
+  37.8% {
+    left: 0%;
+    opacity: 1;
+  }
+  /* Pass 3 */
   50% {
     left: 100%;
-    opacity: 0;
+    opacity: 1;
   }
-  55% {
+  50.1% {
     left: 100%;
     opacity: 0;
   }
-  60% {
+  50.2% {
+    left: 0%;
+    opacity: 0;
+  }
+  50.3% {
+    left: 0%;
+    opacity: 1;
+  }
+  62.5% {
     left: 100%;
     opacity: 1;
   }
-  95% {
+  62.6% {
+    left: 100%;
+    opacity: 0;
+  }
+  62.7% {
+    left: 0%;
+    opacity: 0;
+  }
+  62.8% {
     left: 0%;
     opacity: 1;
   }
-  100% {
+  /* Pass 4 */
+  75% {
+    left: 100%;
+    opacity: 1;
+  }
+  75.1% {
+    left: 100%;
+    opacity: 0;
+  }
+  75.2% {
     left: 0%;
+    opacity: 0;
+  }
+  75.3% {
+    left: 0%;
+    opacity: 1;
+  }
+  /* Final pass - wipe to end and hide */
+  87.5% {
+    left: 100%;
+    opacity: 1;
+  }
+  87.6%, 100% {
+    left: 100%;
     opacity: 0;
   }
 }
 
 .dirty-glass-loop {
-  animation: reveal-pass 6s cubic-bezier(0.4, 0, 0.2, 1) 4 forwards;
+  animation: reveal-pass 12s cubic-bezier(0.4, 0, 0.2, 1) 1 forwards;
 }
 
 .line-wiper {
-  animation: move-line-pass 6s cubic-bezier(0.4, 0, 0.2, 1) 4 forwards;
+  animation: move-line-pass 12s cubic-bezier(0.4, 0, 0.2, 1) 1 forwards;
 }

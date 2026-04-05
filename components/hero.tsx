@@ -70,14 +70,17 @@ export function Hero() {
             <span className="block font-sans font-bold text-2xl sm:text-3xl md:text-4xl text-deep-navy uppercase tracking-tight leading-none">
               Restoring the
             </span>
-            <span className="block font-serif italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-deep-navy mt-2 md:mt-4 text-balance">
+            <span className="block font-serif font-bold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-deep-navy mt-2 md:mt-4 text-balance">
               Oldest Town in Texas
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="max-w-xl mx-auto mb-10 font-sans text-deep-navy/80 text-base sm:text-lg leading-relaxed">
-            Professional exterior cleaning for Nacogdoches homes and businesses — done right, by someone who lives here.
+          <p className="max-w-xl mx-auto mb-10 text-base sm:text-lg leading-relaxed">
+            <span className="font-sans font-bold text-signal-gold">Professional pressure washing services</span>
+            <span className="font-sans text-white/90"> restoring homes and businesses to their original glory.</span>
+            <br />
+            <span className="font-sans text-wave-blue-mid">Nacogdoches Residential &amp; Commercial Exterior Cleaning</span>
           </p>
 
           {/* CTA Button - Sharp corners, Signal Gold bg, Deep Navy text */}
