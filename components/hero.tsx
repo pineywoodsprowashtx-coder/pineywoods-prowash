@@ -66,17 +66,17 @@ export function Hero() {
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
-          <h1 className="mb-8">
-            <span className="block font-sans font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white uppercase tracking-tight leading-none hero-text-shadow">
+          <h1 className="mb-6 sm:mb-8">
+            <span className="block font-sans font-bold text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white uppercase tracking-tight leading-none hero-text-shadow">
               Restoring the
             </span>
-            <span className="block font-serif italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white mt-2 md:mt-4 hero-text-shadow">
+            <span className="block font-serif italic text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white mt-1 sm:mt-2 md:mt-4 hero-text-shadow">
               Oldest Town<br />in Texas
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="max-w-xl mx-auto mb-10 text-base sm:text-lg leading-relaxed hero-text-shadow">
+          <p className="max-w-xl mx-auto mb-8 sm:mb-10 text-sm sm:text-lg leading-relaxed hero-text-shadow">
             <span className="font-sans font-bold text-signal-gold">Professional pressure washing services</span>
             <span className="font-sans text-white/90"> restoring homes and businesses to their original glory.</span>
             <br />
