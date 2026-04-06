@@ -71,7 +71,7 @@ export function Hero() {
               Restoring the
             </span>
             <span className="block font-serif italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white mt-2 md:mt-4 hero-text-shadow">
-              Oldest Town in Texas
+              Oldest Town<br />in Texas
             </span>
           </h1>
 
