@@ -290,9 +290,9 @@
 }
 
 .dirty-glass-loop {
-  animation: reveal-pass 12s cubic-bezier(0.4, 0, 0.2, 1) 1 forwards;
+  animation: reveal-pass 6s ease-in-out 4 forwards;
 }
 
 .line-wiper {
-  animation: move-line-pass 12s cubic-bezier(0.4, 0, 0.2, 1) 1 forwards;
+  animation: move-line-pass 6s ease-in-out 4 forwards;
 }
