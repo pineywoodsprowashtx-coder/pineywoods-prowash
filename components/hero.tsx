@@ -66,17 +66,17 @@ export function Hero() {
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
-          <h1 className="mb-8">
-            <span className="block font-sans font-bold text-2xl sm:text-3xl md:text-4xl text-deep-navy uppercase tracking-tight leading-none">
+          <h1 className="mb-8 hero-text-shadow">
+            <span className="block font-sans font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-deep-navy uppercase tracking-tight leading-none">
               Restoring the
             </span>
-            <span className="block font-serif font-bold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-deep-navy mt-2 md:mt-4 text-balance">
+            <span className="block font-serif font-bold italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-deep-navy mt-2 md:mt-4 text-balance">
               Oldest Town in Texas
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="max-w-xl mx-auto mb-10 text-base sm:text-lg leading-relaxed">
+          <p className="max-w-xl mx-auto mb-10 text-base sm:text-lg leading-relaxed hero-text-shadow">
             <span className="font-sans font-bold text-signal-gold">Professional pressure washing services</span>
             <span className="font-sans text-white/90"> restoring homes and businesses to their original glory.</span>
             <br />
@@ -89,7 +89,7 @@ export function Hero() {
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={handleMouseLeave}
-            className="magnetic-btn group relative inline-flex items-center gap-3 px-8 py-5 sm:px-12 sm:py-6 bg-signal-gold text-deep-navy font-sans font-bold text-base sm:text-lg rounded-sm uppercase tracking-wide overflow-hidden"
+            className="magnetic-btn group relative inline-flex items-center gap-3 px-8 py-5 sm:px-12 sm:py-6 bg-signal-gold text-deep-navy font-sans font-bold text-base sm:text-lg rounded-[10px] uppercase tracking-wide overflow-hidden"
             style={{
               transform: `translate(${mousePos.x}px, ${mousePos.y}px)`
             }}
@@ -111,23 +111,23 @@ export function Hero() {
       </div>
 
       {/* Stats Bar - Full width strip at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-deep-navy py-6">
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-deep-navy py-4 sm:py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10">
             <div className="flex items-center gap-2">
               <span className="font-mono text-2xl sm:text-3xl font-bold text-signal-gold">100%</span>
               <span className="font-mono text-xs text-white uppercase tracking-wider text-left leading-tight">
                 Satisfaction<br />Guaranteed
               </span>
             </div>
-            <div className="w-px h-8 bg-white/30 hidden sm:block" />
+            <div className="w-16 h-px sm:w-px sm:h-8 bg-white/30" />
             <div className="flex items-center gap-2">
               <span className="font-mono text-2xl sm:text-3xl font-bold text-wave-blue-mid">24hr</span>
               <span className="font-mono text-xs text-white uppercase tracking-wider text-left leading-tight">
                 Quote<br />Response
               </span>
             </div>
-            <div className="w-px h-8 bg-white/30 hidden sm:block" />
+            <div className="w-16 h-px sm:w-px sm:h-8 bg-white/30" />
             <div className="flex items-center gap-2">
               <span className="font-mono text-2xl sm:text-3xl font-bold text-signal-gold">Local</span>
               <span className="font-mono text-xs text-white uppercase tracking-wider text-left leading-tight">

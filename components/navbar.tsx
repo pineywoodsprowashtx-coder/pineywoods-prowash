@@ -56,11 +56,11 @@ export function Navbar() {
           href="tel:+19033920818"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="magnetic-btn hidden md:flex relative px-4 py-2 md:px-6 md:py-2.5 bg-deep-navy text-signal-gold font-sans font-bold text-xs md:text-sm rounded-sm uppercase tracking-wide"
+          className="magnetic-btn hidden md:flex relative px-4 py-2 md:px-6 md:py-2.5 bg-white text-deep-navy font-sans font-bold text-xs md:text-sm rounded-[10px] uppercase tracking-wide"
         >
           <span className="relative z-10">Call Now</span>
           <div
-            className={`absolute inset-0 rounded-sm bg-deep-navy/90 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute inset-0 rounded-[10px] bg-gray-100 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
           />
         </a>
 
@@ -80,7 +80,7 @@ export function Navbar() {
         <div className="md:hidden mt-2 p-4 rounded-xl bg-concrete-light/95 backdrop-blur-xl border border-wave-blue-mid/20">
           <a 
             href="tel:+19033920818"
-            className="block w-full py-3 px-4 bg-deep-navy text-signal-gold font-sans font-bold text-sm rounded-sm uppercase tracking-wide text-center"
+            className="block w-full py-3 px-4 bg-white text-deep-navy font-sans font-bold text-sm rounded-[10px] uppercase tracking-wide text-center"
           >
             Call Now
           </a>
