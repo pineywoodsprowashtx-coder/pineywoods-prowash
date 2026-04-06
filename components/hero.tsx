@@ -25,7 +25,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden film-grain">
+    <section className="relative h-screen flex flex-col overflow-hidden film-grain">
       {/* Background - Dirty/Grimy Layer */}
       <div className="absolute inset-0">
         <Image
@@ -62,41 +62,43 @@ export function Hero() {
         }}
       />
 
-      {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 pt-24">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Main Headline */}
-          <h1 className="mb-6 sm:mb-8">
-            <span className="block font-sans font-bold text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white uppercase tracking-tight leading-none hero-text-shadow">
-              Restoring the
-            </span>
-            <span className="block font-serif italic text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white mt-1 sm:mt-2 md:mt-4 hero-text-shadow">
-              Oldest Town<br />in Texas
-            </span>
+      {/* Main Content Area - Flexbox column layout */}
+      <div className="relative z-20 flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-4">
+        <div className="max-w-4xl mx-auto text-center w-full">
+          {/* RESTORING THE - Small supporting line */}
+          <p className="font-sans font-bold text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white uppercase tracking-tight leading-none hero-text-shadow mb-1 sm:mb-2">
+            Restoring the
+          </p>
+          
+          {/* Oldest Town / in Texas - Main headline */}
+          <h1 className="font-serif italic text-white hero-text-shadow leading-[0.9] mb-3 sm:mb-6">
+            <span className="block text-[12vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">Oldest Town</span>
+            <span className="block text-[12vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">in Texas</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="max-w-xl mx-auto mb-8 sm:mb-10 text-sm sm:text-lg leading-relaxed hero-text-shadow">
+          {/* Subheadline - Compact */}
+          <p className="max-w-md mx-auto mb-4 sm:mb-8 text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed hero-text-shadow">
             <span className="font-sans font-bold text-signal-gold">Professional pressure washing services</span>
             <span className="font-sans text-white/90"> restoring homes and businesses to their original glory.</span>
-            <br />
+            <span className="hidden sm:inline"><br /></span>
+            <span className="sm:hidden"> </span>
             <span className="font-sans text-wave-blue-mid">Nacogdoches Residential &amp; Commercial Exterior Cleaning</span>
           </p>
 
-          {/* CTA Button - Sharp corners, Signal Gold bg, Deep Navy text */}
+          {/* CTA Button - Full width on mobile */}
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={handleMouseLeave}
-            className="magnetic-btn group relative inline-flex items-center gap-3 px-8 py-5 sm:px-12 sm:py-6 bg-signal-gold text-deep-navy font-sans font-bold text-base sm:text-lg rounded-[10px] uppercase tracking-wide overflow-hidden"
+            className="magnetic-btn group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-4 sm:px-12 sm:py-6 bg-signal-gold text-deep-navy font-sans font-bold text-sm sm:text-lg rounded-[10px] uppercase tracking-wide overflow-hidden"
             style={{
               transform: `translate(${mousePos.x}px, ${mousePos.y}px)`
             }}
           >
             <span className="relative z-10">Secure Your Free Quote</span>
             <svg 
-              className={`relative z-10 w-5 h-5 transition-transform duration-300 ${isButtonHovered ? 'translate-x-1' : ''}`}
+              className={`relative z-10 w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isButtonHovered ? 'translate-x-1' : ''}`}
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
@@ -110,28 +112,28 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Stats Bar - Full width strip at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-deep-navy py-4 sm:py-6">
+      {/* Stats Bar - Compact, stacked on mobile */}
+      <div className="relative z-20 bg-deep-navy py-3 sm:py-5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10">
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-2xl sm:text-3xl font-bold text-signal-gold">100%</span>
-              <span className="font-mono text-xs text-white uppercase tracking-wider text-left leading-tight">
-                Satisfaction<br />Guaranteed
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-8">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="font-mono text-sm sm:text-2xl font-bold text-signal-gold">100%</span>
+              <span className="font-mono text-[10px] sm:text-xs text-white uppercase tracking-wider leading-tight">
+                Satisfaction Guaranteed
               </span>
             </div>
-            <div className="w-16 h-px sm:w-px sm:h-8 bg-white/30" />
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-2xl sm:text-3xl font-bold text-wave-blue-mid">24hr</span>
-              <span className="font-mono text-xs text-white uppercase tracking-wider text-left leading-tight">
-                Quote<br />Response
+            <div className="hidden sm:block w-px h-6 bg-white/30" />
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="font-mono text-sm sm:text-2xl font-bold text-wave-blue-mid">24hr</span>
+              <span className="font-mono text-[10px] sm:text-xs text-white uppercase tracking-wider leading-tight">
+                Quote Response
               </span>
             </div>
-            <div className="w-16 h-px sm:w-px sm:h-8 bg-white/30" />
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-2xl sm:text-3xl font-bold text-signal-gold">Local</span>
-              <span className="font-mono text-xs text-white uppercase tracking-wider text-left leading-tight">
-                Owned &<br />Operated
+            <div className="hidden sm:block w-px h-6 bg-white/30" />
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="font-mono text-sm sm:text-2xl font-bold text-signal-gold">Local</span>
+              <span className="font-mono text-[10px] sm:text-xs text-white uppercase tracking-wider leading-tight">
+                Owned &amp; Operated
               </span>
             </div>
           </div>
