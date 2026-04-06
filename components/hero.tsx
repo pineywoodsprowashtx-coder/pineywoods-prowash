@@ -66,11 +66,11 @@ export function Hero() {
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
-          <h1 className="mb-8 hero-text-shadow">
-            <span className="block font-sans font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-deep-navy uppercase tracking-tight leading-none">
+          <h1 className="mb-8">
+            <span className="block font-sans font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase tracking-tight leading-none hero-text-shadow">
               Restoring the
             </span>
-            <span className="block font-serif font-bold italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-deep-navy mt-2 md:mt-4 text-balance">
+            <span className="block font-serif italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white mt-2 md:mt-4 hero-text-shadow">
               Oldest Town in Texas
             </span>
           </h1>

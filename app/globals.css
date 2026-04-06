@@ -106,7 +106,7 @@
 
 /* Hero text shadow for readability over any background */
 .hero-text-shadow {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
 }
 
 /* Magnetic button effect */
