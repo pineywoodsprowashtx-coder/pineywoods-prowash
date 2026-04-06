@@ -67,7 +67,7 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
           <h1 className="mb-8">
-            <span className="block font-sans font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase tracking-tight leading-none hero-text-shadow">
+            <span className="block font-sans font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white uppercase tracking-tight leading-none hero-text-shadow">
               Restoring the
             </span>
             <span className="block font-serif italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white mt-2 md:mt-4 hero-text-shadow">
