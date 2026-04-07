@@ -50,7 +50,7 @@ export function Hero() {
           className="object-cover brightness-110 contrast-110 saturate-110"
           priority
         />
-        <div className="bg-gradient-to-b from-concrete/30 via-concrete/20 to-concrete/80" />
+        <div className="bg-gradient-to-b from-concrete/30 via-concrete/35 to-concrete/80" />
       </div>
 
       {/* Reveal Line Indicator - Signal Gold */}
