@@ -72,8 +72,8 @@ export function Hero() {
           
           {/* Oldest Town / in Texas - Main headline */}
           <h1 className="font-serif italic font-bold text-white hero-text-shadow leading-[0.9] mb-3 sm:mb-6">
-            <span className="block text-6xl sm:text-6xl md:text-7xl lg:text-8xl">Oldest Town</span>
-            <span className="block text-6xl sm:text-6xl md:text-7xl lg:text-8xl">in Texas</span>
+            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">Oldest Town</span>
+            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">in Texas</span>
           </h1>
 
           {/* Subheadline - Compact */}
