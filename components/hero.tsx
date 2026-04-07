@@ -79,10 +79,10 @@ export function Hero() {
           {/* Subheadline - Compact */}
           <p className="max-w-lg mx-auto mb-6 sm:mb-8 text-lg sm:text-xl md:text-2xl leading-snug sm:leading-relaxed hero-text-shadow">
             <span className="font-sans font-bold text-signal-gold">Professional pressure washing services</span>
-            <span className="font-sans text-white/90"> restoring homes and businesses to their original glory.</span>
+            <span className="font-sans font-bold text-white/90"> restoring homes and businesses to their original glory.</span>
             <span className="hidden sm:inline"><br /></span>
             <span className="sm:hidden"> </span>
-            <span className="font-sans text-wave-blue-mid">Nacogdoches Residential &amp; Commercial Exterior Cleaning</span>
+            <span className="font-sans font-bold text-wave-blue-mid">Nacogdoches Residential &amp; Commercial Exterior Cleaning</span>
           </p>
 
           {/* CTA Button - Full width on mobile */}
