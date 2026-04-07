@@ -25,7 +25,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative h-screen flex flex-col overflow-hidden film-grain">
+    <section className="relative h-screen flex flex-col film-grain">
       {/* Background - Dirty/Grimy Layer */}
       <div className="absolute inset-0">
         <Image
@@ -66,14 +66,14 @@ export function Hero() {
       <div className="relative z-20 flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-4">
         <div className="max-w-4xl mx-auto text-center w-full">
           {/* RESTORING THE - Small supporting line */}
-          <p className="font-sans font-bold text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white uppercase tracking-tight leading-none hero-text-shadow mb-1 sm:mb-2">
+          <p className="font-sans font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase tracking-tight leading-none hero-text-shadow mb-1 sm:mb-2">
             Restoring the
           </p>
           
           {/* Oldest Town / in Texas - Main headline */}
           <h1 className="font-serif italic text-white hero-text-shadow leading-[0.9] mb-3 sm:mb-6">
-            <span className="block text-[12vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">Oldest Town</span>
-            <span className="block text-[12vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">in Texas</span>
+            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">Oldest Town</span>
+            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">in Texas</span>
           </h1>
 
           {/* Subheadline - Compact */}
@@ -91,7 +91,7 @@ export function Hero() {
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={handleMouseLeave}
-            className="magnetic-btn group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-4 sm:px-12 sm:py-6 bg-signal-gold text-deep-navy font-sans font-bold text-sm sm:text-lg rounded-[10px] uppercase tracking-wide overflow-hidden"
+            className="magnetic-btn group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-4 sm:px-12 sm:py-6 bg-signal-gold text-deep-navy font-sans font-bold text-sm sm:text-lg rounded-full uppercase tracking-wide overflow-hidden"
             style={{
               transform: `translate(${mousePos.x}px, ${mousePos.y}px)`
             }}
