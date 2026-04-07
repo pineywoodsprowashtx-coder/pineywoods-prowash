@@ -50,7 +50,7 @@ export function Hero() {
           className="object-cover brightness-110 contrast-110 saturate-110"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-concrete/30 via-transparent to-concrete/80" />
+        <div className="bg-gradient-to-b from-concrete/30 via-concrete/20 to-concrete/80" />
       </div>
 
       {/* Reveal Line Indicator - Signal Gold */}
@@ -77,7 +77,7 @@ export function Hero() {
           </h1>
 
           {/* Subheadline - Compact */}
-          <p className="max-w-md mx-auto mb-4 sm:mb-8 text-sm sm:text-lg md:text-xl leading-snug sm:leading-relaxed hero-text-shadow">
+          <p className="max-w-md mx-auto mb-4 sm:mb-8 text-base sm:text-xl md:text-2xl leading-snug sm:leading-relaxed hero-text-shadow">
             <span className="font-sans font-bold text-signal-gold">Professional pressure washing services</span>
             <span className="font-sans text-white/90"> restoring homes and businesses to their original glory.</span>
             <span className="hidden sm:inline"><br /></span>
