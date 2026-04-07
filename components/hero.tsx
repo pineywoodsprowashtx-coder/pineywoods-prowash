@@ -71,13 +71,13 @@ export function Hero() {
           </p>
           
           {/* Oldest Town / in Texas - Main headline */}
-          <h1 className="font-serif italic text-white hero-text-shadow leading-[0.9] mb-3 sm:mb-6">
+          <h1 className="font-serif italic font-bold text-white hero-text-shadow leading-[0.9] mb-3 sm:mb-6">
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">Oldest Town</span>
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">in Texas</span>
           </h1>
 
           {/* Subheadline - Compact */}
-          <p className="max-w-md mx-auto mb-4 sm:mb-8 text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed hero-text-shadow">
+          <p className="max-w-md mx-auto mb-4 sm:mb-8 text-sm sm:text-lg md:text-xl leading-snug sm:leading-relaxed hero-text-shadow">
             <span className="font-sans font-bold text-signal-gold">Professional pressure washing services</span>
             <span className="font-sans text-white/90"> restoring homes and businesses to their original glory.</span>
             <span className="hidden sm:inline"><br /></span>
