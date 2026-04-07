@@ -91,7 +91,7 @@ export function Hero() {
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={handleMouseLeave}
-            className="magnetic-btn group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-4 sm:px-12 sm:py-6 bg-signal-gold text-deep-navy font-sans font-bold text-sm sm:text-lg rounded-full uppercase tracking-wide overflow-hidden"
+            className="magnetic-btn group relative w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-4 sm:px-12 sm:py-6 bg-signal-gold text-deep-navy font-sans font-bold text-sm sm:text-lg rounded-full uppercase tracking-wide overflow-hidden"
             style={{
               transform: `translate(${mousePos.x}px, ${mousePos.y}px)`
             }}
