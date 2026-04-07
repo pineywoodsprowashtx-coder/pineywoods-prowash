@@ -66,14 +66,14 @@ export function Hero() {
       <div className="relative z-20 flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-4">
         <div className="max-w-4xl mx-auto text-center w-full">
           {/* RESTORING THE - Small supporting line */}
-          <p className="font-sans font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase tracking-tight leading-none hero-text-shadow mb-1 sm:mb-2">
+          <p className="font-sans font-bold text-[2.75rem] sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase tracking-tight leading-none hero-text-shadow mb-1 sm:mb-2">
             Restoring the
           </p>
           
           {/* Oldest Town / in Texas - Main headline */}
           <h1 className="font-serif italic font-bold text-white hero-text-shadow leading-[0.9] mb-3 sm:mb-6">
-            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">Oldest Town</span>
-            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">in Texas</span>
+            <span className="block text-6xl sm:text-6xl md:text-7xl lg:text-8xl">Oldest Town</span>
+            <span className="block text-6xl sm:text-6xl md:text-7xl lg:text-8xl">in Texas</span>
           </h1>
 
           {/* Subheadline - Compact */}
