@@ -77,7 +77,7 @@ export function Hero() {
           </h1>
 
           {/* Subheadline - Compact */}
-          <p className="max-w-md mx-auto mb-6 sm:mb-8 text-base sm:text-xl md:text-2xl leading-snug sm:leading-relaxed hero-text-shadow">
+          <p className="max-w-lg mx-auto mb-6 sm:mb-8 text-lg sm:text-xl md:text-2xl leading-snug sm:leading-relaxed hero-text-shadow">
             <span className="font-sans font-bold text-signal-gold">Professional pressure washing services</span>
             <span className="font-sans text-white/90"> restoring homes and businesses to their original glory.</span>
             <span className="hidden sm:inline"><br /></span>
