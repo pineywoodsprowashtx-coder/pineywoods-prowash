@@ -90,7 +90,7 @@ export function Navbar() {
           <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">Services</a>
           <a href="#service-area" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">Service Area</a>
           <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">FAQ</a>
-          <a href="#quote" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">Get a Quote</a>
+          <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">Get a Quote</a>
           <a 
             href="tel:+19033920818"
             className="block w-full py-3 px-4 bg-white text-deep-navy font-sans font-bold text-sm rounded-[10px] uppercase tracking-wide text-center"
