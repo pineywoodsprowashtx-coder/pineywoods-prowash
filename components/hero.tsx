@@ -124,9 +124,9 @@ export function Hero() {
             </div>
             <div className="hidden sm:block w-px h-6 bg-white/30" />
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className="font-mono text-sm sm:text-2xl font-bold text-wave-blue-mid">24hr</span>
+              <span className="font-mono text-sm sm:text-2xl font-bold text-wave-blue-mid">Fully</span>
               <span className="font-mono text-[10px] sm:text-xs text-white uppercase tracking-wider leading-tight">
-                Quote Response
+                Insured
               </span>
             </div>
             <div className="hidden sm:block w-px h-6 bg-white/30" />
