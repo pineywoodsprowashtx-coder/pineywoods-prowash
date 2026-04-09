@@ -70,7 +70,7 @@ export function About() {
               {/* Corner accents */}
               <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-[#FFD700]/40" />
               <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-[#FFD700]/40" />
-            </div>
+            </div><p className="font-serif italic text-2xl text-[#001F3F] text-center mt-6">&ldquo;Cleaned Like I Live Here.&rdquo;</p>
           </div>
         </div>
       </div>
