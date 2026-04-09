@@ -26,15 +26,15 @@ export function About() {
             <div className="bg-[#001F3F] border-l-[3px] border-l-[#FFD700] rounded-sm p-6 sm:p-8">
               <div className="space-y-5">
                 <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
-                  My mother was born and raised in Nacogdoches. I grew up in Houston, but I spent many summers here — at my grandparents&apos; house, surrounded by the pine trees and the slower pace of East Texas. This town was special, even when I lived somewhere else.
+                Nacogdoches has been part of my story for as long as I can remember. My mom was born and raised here and even though I grew up in Houston, I spent many summers in East Texas with my grandparents, surrounded by pine trees and the kind of small-town values that stay with you.
                 </p>
                 
                 <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
-                  In 2022, life called me back.
+                In 2022, I came back to Nacogdoches when my family needed me most. 
                 </p>
                 
                 <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
-                  My mom needed me. I left behind the life I had built. It was not an easy choice, but it was the right one.
+                That decision changed the direction of my life and led me to start Pineywoods ProWash.
                 </p>
                 
                 <p className="font-serif italic text-lg text-[#FFD700] leading-relaxed">
