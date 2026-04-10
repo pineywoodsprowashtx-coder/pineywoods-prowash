@@ -26,23 +26,25 @@ export function About() {
             <div className="bg-[#001F3F] border-l-[3px] border-l-[#FFD700] rounded-sm p-6 sm:p-8">
               <div className="space-y-5">
                 <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
-                Nacogdoches has been part of my story for as long as I can remember. My mom was born and raised here and even though I grew up in Houston, I spent many summers in East Texas with my grandparents, surrounded by pine trees and the kind of small-town values that stay with you.
+                Nacogdoches has been a part of my life as long as I can remember.
+My mom was born and raised here.
+I grew up in Houston, but I spent many summers here with my grandparents, surrounded by pine trees and the slower pace of East Texas.
                 </p>
                 
                 <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
-                In 2022, I came back to Nacogdoches when my family needed me most. 
+                In 2022, I came back to Nac when my family needed me most. 
                 </p>
                 
                 <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
-                That decision changed the direction of my life and led me to start Pineywoods ProWash.
+                That decision brought me home — and led me to build Pineywoods ProWash.
                 </p>
                 
                 <p className="font-serif italic text-lg text-[#FFD700] leading-relaxed">
-                  I came home for my Mom. I built Pineywoods ProWash. And they&apos;re worth staying for.
+                I came home for my Mom. I built Pineywoods ProWash. I stayed for both.
                 </p>
                 
                 <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
-                  Today, we keep Nacogdoches homes and businesses looking their best.
+                  Today, I'm proud to serve the place that I call home.
                 </p>
               </div>
             </div>

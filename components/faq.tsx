@@ -50,7 +50,7 @@ export function FAQ() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-sans font-bold text-4xl sm:text-5xl text-deep-navy uppercase tracking-tight">
-            FAQ
+            FREQUENTLY ASKED QUESTIONS
           </h2>
         </div>
 
