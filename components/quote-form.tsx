@@ -210,7 +210,7 @@ export function QuoteForm() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="group relative w-full mt-8 px-8 py-5 bg-signal-gold text-deep-navy font-sans font-bold text-lg uppercase tracking-wider overflow-hidden rounded-sm transition-all hover:shadow-[0_0_30px_-5px_rgba(255,215,0,0.5)]"
+                  className="group relative w-full mt-8 px-8 py-5 bg-signal-gold text-deep-navy font-sans font-bold text-lg uppercase tracking-wider overflow-hidden rounded-lg transition-all hover:shadow-[0_0_30px_-5px_rgba(255,215,0,0.5)]"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-3">
                     SEND REQUEST

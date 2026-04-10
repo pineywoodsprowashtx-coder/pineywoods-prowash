@@ -71,7 +71,7 @@ export function ServiceArea() {
         {/* Body Text */}
         <div className="max-w-2xl mx-auto text-center">
           <p className="font-sans text-[#001F3F] leading-relaxed">
-            We&apos;re based right here in Nacogdoches and we serve a 50+ mile radius across East Texas. If you&apos;re not sure whether we cover your area, just reach out. Chances are we do.
+            We&apos;re based right here in Nacogdoches and we serve a 50+ mile radius across East Texas.
           </p>
         </div>
       </div>

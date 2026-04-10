@@ -81,7 +81,7 @@ export function Footer() {
             {/* Phone Box */}
             <a
               href="tel:+19033920818"
-              className="group flex items-center gap-4 px-5 py-4 bg-signal-gold rounded-sm hover:bg-signal-gold-hover hover:shadow-[0_0_40px_rgba(255,215,0,0.4)] transition-all duration-300"
+              className="group flex items-center gap-4 px-5 py-4 bg-signal-gold rounded-lg hover:bg-signal-gold-hover hover:shadow-[0_0_40px_rgba(255,215,0,0.4)] transition-all duration-300"
             >
               {/* Phone Icon */}
               <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-deep-navy/10 rounded-sm transition-colors">

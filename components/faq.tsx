@@ -122,7 +122,7 @@ export function FAQ() {
           </p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group relative px-8 py-4 bg-signal-gold text-deep-navy font-sans font-bold uppercase tracking-wider rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,215,0,0.4)]"
+            className="group relative px-8 py-4 bg-signal-gold text-deep-navy font-sans font-bold uppercase tracking-wider rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,215,0,0.4)]"
           >
             <span className="relative z-10 flex items-center gap-2">
               CONTACT US
