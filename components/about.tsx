@@ -39,13 +39,18 @@ I grew up in Houston, but I spent many summers here with my grandparents, surrou
                 That decision brought me home — and led me to build Pineywoods ProWash.
                 </p>
                 
-                <p className="font-serif italic text-lg text-[#FFD700] leading-relaxed">
-                I came home for my Mom. I built Pineywoods ProWash. I stayed for both.
-                </p>
+                <div className="font-sans font-bold text-lg md:text-xl text-[#FFD700] leading-tight my-6 italic">
+  <span className="block mb-2">I came home for my Mom.</span>
+  <span className="block mb-2">I built Pineywoods ProWash.</span>
+  <span className="block">I stayed for both.</span>
+</div>
                 
                 <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
                   Today, I'm proud to serve the place that I call home.
                 </p>
+                <p className="font-sans text-base text-[#F5F4F2] leading-relaxed mt-4">
+  Every job. Every time. That's the Pineywoods ProWash standard.
+</p>
               </div>
             </div>
 

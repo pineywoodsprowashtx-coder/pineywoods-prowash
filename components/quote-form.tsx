@@ -72,9 +72,9 @@ export function QuoteForm() {
           <h2 className="font-sans font-bold text-4xl md:text-5xl text-deep-navy uppercase mb-4">
             REQUEST A FREE QUOTE
           </h2>
-          <p className="font-sans text-deep-navy/70 max-w-xl mx-auto">
-            No pressure, no obligation — just tell us what you need and we&apos;ll get back to you within 24 hours.
-          </p>
+          <p className="font-serif italic text-[#5B8DB8] text-base md:text-lg mt-3 max-w-xl mx-auto font-medium">
+  No pressure, no obligation — just tell us what you need and we&apos;ll get back to you within 24 hours.
+</p>
         </div>
 
         <div className="max-w-2xl mx-auto">
