@@ -101,7 +101,7 @@ export function Footer() {
 
             {/* Hours */}
             <div className="font-sans text-sm text-concrete-light/70">
-              <span className="text-wave-blue-mid">Hours:</span> Mon-Fri: 8AM - 5PM
+              <span className="text-wave-blue-mid">Hours:</span> Mon-Fri: 9AM - 5PM
             </div>
           </div>
         </div>

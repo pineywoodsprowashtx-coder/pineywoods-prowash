@@ -194,7 +194,7 @@ export function Services() {
           <h2 className="font-sans font-bold text-4xl md:text-5xl text-deep-navy uppercase mb-4">
             OUR SERVICES
           </h2>
-          <p className="font-serif italic text-xl md:text-2xl text-deep-navy/70">
+          <p className="font-serif italic text-xl md:text-2xl text-[#5B8DB8]">
             Pro cleaning tailored for East Texas homes.
           </p>
         </div>

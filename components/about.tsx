@@ -42,7 +42,7 @@ I grew up in Houston, but I spent many summers here with my grandparents, surrou
                 <div className="font-sans font-bold text-lg md:text-xl text-[#FFD700] leading-tight my-6 italic">
   <span className="block mb-2">I came home for my Mom.</span>
   <span className="block mb-2">I built Pineywoods ProWash.</span>
-  <span className="block">I stayed for both.</span>
+  <span className="block">This is home.</span>
 </div>
                 
                 <p className="font-sans text-base text-[#F5F4F2] leading-relaxed">
