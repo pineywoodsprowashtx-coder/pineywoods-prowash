@@ -195,7 +195,7 @@ export function Services() {
             OUR SERVICES
           </h2>
           <p className="font-serif italic text-xl md:text-2xl text-[#5B8DB8]">
-            Pro cleaning tailored for East Texas homes.
+            Professional services tailored for East Texas.
           </p>
         </div>
 

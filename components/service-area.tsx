@@ -6,11 +6,11 @@ const cities = [
   { name: 'Nacogdoches', isHQ: true },
   { name: 'Appleby', isHQ: false },
   { name: 'Central Heights', isHQ: false },
-  { name: 'Garrison', isHQ: false },
+  { name: 'Jacksonville', isHQ: false },
   { name: 'Lufkin', isHQ: false },
   { name: 'Huntington', isHQ: false },
   { name: 'Henderson', isHQ: false },
-  { name: 'Carthage', isHQ: false },
+  { name: 'Hudson', isHQ: false },
 ]
 
 export function ServiceArea() {
