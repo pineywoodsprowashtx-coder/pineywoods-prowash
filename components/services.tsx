@@ -144,7 +144,7 @@ const serviceData = {
   },
   gutters: {
     title: 'GUTTER CLEANING',
-    subtitle: 'Clear gutters. No ladder. No hassle.',
+    subtitle: 'Clean gutters. No ladder. No hassle.',
     bullets: [
       'Removes leaves, debris, and built-up blockages',
       'Protects your roofline, fascia, and foundation',
