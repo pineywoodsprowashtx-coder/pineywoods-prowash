@@ -74,7 +74,7 @@ export function SeeTheDifference() {
             onTouchStart={() => setIsDragging(true)}
           >
             {/* AFTER Image (full width background) */}
-            <div className="absolute inset-0 bg-[#E5E4E2]">
+            <div className="absolute inset-0 bg-[#E5E4E2]" style={{ backgroundImage: 'url(/garage-cleaning-after.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-[#5B8DB8]/20 flex items-center justify-center">
@@ -92,7 +92,12 @@ export function SeeTheDifference() {
             {/* BEFORE Image (clipped by slider) */}
             <div
               className="absolute inset-0 bg-[#001F3F]"
-              style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+              style={{ 
+                clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
+                backgroundImage: 'url(/garage-cleaning-before.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
