@@ -56,22 +56,7 @@ I grew up in Houston, but I spent many summers here with my grandparents, surrou
 
             {/* Owner Photo Placeholder */}
             <div className="relative">
-              <div className="aspect-[4/5] bg-[#001F3F] border-2 border-dashed border-[#FFD700] rounded-sm flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#5B8DB8]/20 flex items-center justify-center">
-                    <svg 
-                      className="w-12 h-12 text-[#5B8DB8]" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                  <p className="font-mono text-sm text-[#5B8DB8] uppercase tracking-wider">
-                    [ OWNER PHOTO — add in Cursor ]
-                  </p>
-                </div>
+              <div className="aspect-[4/5] bg-[#001F3F] border-2 border-dashed border-[#FFD700] rounded-sm flex items-center justify-center"style={{ backgroundImage: 'url(/owner-photo.png)', backgroundSize: 'cover', backgroundPosition: 'center top' }}>
               </div>
               
               {/* Corner accents */}
