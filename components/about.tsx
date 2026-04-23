@@ -56,7 +56,7 @@ I grew up in Houston, but I spent many summers here with my grandparents, surrou
 
             {/* Owner Photo Placeholder */}
             <div className="relative">
-              <div className="aspect-[4/5] bg-[#001F3F]  rounded-sm flex items-center justify-center"style={{ backgroundImage: 'url(/owner-photo-new.png)', backgroundSize: 'cover', backgroundPosition: 'center top' }}>
+              <div className="aspect-[4/5] bg-[#001F3F]  rounded-sm flex items-center justify-center"style={{ backgroundImage: 'url(/owner-photo-new.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center top' }}>
               </div>
               
               {/* Corner accents */}
