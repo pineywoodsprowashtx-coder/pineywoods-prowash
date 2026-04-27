@@ -87,7 +87,7 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden mt-2 p-4 rounded-xl bg-concrete-light/95 backdrop-blur-xl border border-wave-blue-mid/20">
           <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">About</a>
-          <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">Services</a>
+          <a href="#cost-estimator" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">Cost Estimator</a>
           <a href="#service-area" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">Service Area</a>
           <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">FAQ</a>
           <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-4 text-deep-navy font-sans font-bold text-sm uppercase tracking-wide">Get a Quote</a>

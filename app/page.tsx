@@ -2,6 +2,7 @@ import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
 import { SeeTheDifference } from '@/components/see-the-difference'
 import { Services } from '@/components/services'
+import ServiceCostEstimator from '@/components/service-cost-estimator'
 import { HowItWorks } from '@/components/how-it-works'
 import { About } from '@/components/about'
 import { ServiceArea } from '@/components/service-area'
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <SeeTheDifference />
       <Services />
+      <ServiceCostEstimator />
       <HowItWorks />
       <About />
       <ServiceArea />
