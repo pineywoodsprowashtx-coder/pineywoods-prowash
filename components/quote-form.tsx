@@ -1,6 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { createClient } from '@supabase/supabase-js'
+
+// 1. Initialize Supabase Client securely
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
 
 const services = [
   { id: 'housewash', label: 'House Wash' },
@@ -21,38 +28,39 @@ export function QuoteForm() {
     notes: '',
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+    setIsSubmitting(true)
+   
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: "22dc5418-f6b5-4be2-826c-1712a32ae13d",
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          address: formData.address,
-          service: formData.service,
-          notes: formData.notes,
-          subject: `NEW LEAD: ${formData.name} - Pineywoods ProWash`,
-          from_name: "Pineywoods Website"
-        }),
-      })
+      // 2. The Direct Supabase Push
+      const { error } = await supabase
+  .from('leads')
+  .insert([
+    {
+      client_name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      service_address: formData.address,
+      service_requested: formData.service,
+      internal_notes: formData.notes
+    }
+  ])
 
-      const result = await response.json()
-      if (result.success) {
-        setIsSubmitted(true)
-      } else {
-        alert("Transmission Error. Please check your Key.")
+      if (error) {
+        throw error
       }
+
+      // Success
+      setIsSubmitted(true)
+      
     } catch (err) {
-      console.error(err)
-      alert("Connection failed. Check your internet.")
+      console.error('Supabase insertion error:', err)
+      alert("Transmission Error. Please check your connection or database permissions.")
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -210,13 +218,16 @@ export function QuoteForm() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="group relative w-full mt-8 px-8 py-5 bg-signal-gold text-deep-navy font-sans font-bold text-lg uppercase tracking-wider overflow-hidden rounded-lg transition-all hover:shadow-[0_0_30px_-5px_rgba(255,215,0,0.5)]"
+                  disabled={isSubmitting}
+                  className="group relative w-full mt-8 px-8 py-5 bg-signal-gold text-deep-navy font-sans font-bold text-lg uppercase tracking-wider overflow-hidden rounded-lg transition-all hover:shadow-[0_0_30px_-5px_rgba(255,215,0,0.5)] disabled:opacity-70 disabled:cursor-wait"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-3">
-                    SEND REQUEST
-                    <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    {isSubmitting ? 'TRANSMITTING...' : 'SEND REQUEST'}
+                    {!isSubmitting && (
+                      <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    )}
                   </span>
                   <div className="absolute inset-0 bg-signal-gold-hover translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 </button>
