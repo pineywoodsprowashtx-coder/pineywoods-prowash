@@ -1,14 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Home,
   LayoutGrid,
   CloudRain,
   Sparkles,
   RotateCcw,
+  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
+import {
+  saveEstimate,
+  type EstimateHandoff,
+  type EstimateLineItem,
+  type EstimateServiceKey,
+} from "@/lib/estimate-handoff";
 
 // ============================================================================
 // PRICING CONFIG — Single Source of Truth
@@ -26,6 +34,7 @@ const PRICING_CONFIG = {
     max: 5000,
     step: 100,
     defaultValue: 0,
+    quoteType: "priced",
     icon: "Home" as const,
   },
   concreteCleaning: {
@@ -39,11 +48,14 @@ const PRICING_CONFIG = {
     max: 3000,
     step: 50,
     defaultValue: 0,
+    quoteType: "priced",
     icon: "LayoutGrid" as const,
   },
+  // Roof cleaning is waitlist-only — we collect the roof size so we can size up
+  // the job, but we never show a guaranteed price for it.
   roofCleaning: {
     label: "Roof Cleaning",
-    subtitle: "Soft Wash Treatment",
+    subtitle: "Soft Wash — Waitlist Only",
     unit: "sq ft",
     baseRate: 0.18,
     minPrice: 200,
@@ -52,11 +64,12 @@ const PRICING_CONFIG = {
     max: 4000,
     step: 100,
     defaultValue: 0,
+    quoteType: "waitlist",
     icon: "CloudRain" as const,
   },
   windowCleaning: {
     label: "Exterior Window Cleaning",
-    subtitle: "Streak-Free Finish",
+    subtitle: "Exterior Only — Streak-Free Finish",
     unit: "windows",
     baseRate: 8.5,
     minPrice: 75,
@@ -65,9 +78,12 @@ const PRICING_CONFIG = {
     max: 60,
     step: 1,
     defaultValue: 0,
+    quoteType: "priced",
     icon: "Sparkles" as const,
   },
-} as const;
+  // Keys must line up with EstimateServiceKey so the quote-form handoff map
+  // can never fall out of sync with what we price here.
+} as const satisfies Record<EstimateServiceKey, unknown>;
 
 type ServiceKey = keyof typeof PRICING_CONFIG;
 type ServiceConfig = (typeof PRICING_CONFIG)[ServiceKey];
@@ -80,7 +96,8 @@ function calculateEstimate(
   quantity: number,
   config: ServiceConfig
 ): { low: number; high: number } {
-  if (quantity <= 0) return { low: 0, high: 0 };
+  // Waitlist services never carry a price, so they also never hit the total.
+  if (quantity <= 0 || config.quoteType === "waitlist") return { low: 0, high: 0 };
   const raw = quantity * config.baseRate;
   const low = Math.max(Math.round(raw), config.minPrice);
   const high = Math.round(low * (1 + config.rangeBuffer));
@@ -116,6 +133,7 @@ function ServiceCard({
   const Icon = iconMap[config.icon];
   const estimate = calculateEstimate(value, config);
   const isActive = value > 0;
+  const isWaitlist = config.quoteType === "waitlist";
 
   const fillPercent = isActive
     ? ((value - config.min) / (config.max - config.min)) * 100
@@ -128,9 +146,16 @@ function ServiceCard({
           <Icon className="w-6 h-6 text-[#FFD700]" strokeWidth={2} />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="text-white font-bold uppercase text-sm tracking-wide">
-            {config.label}
-          </h3>
+          <div className="flex items-center gap-2 flex-wrap">
+            <h3 className="text-white font-bold uppercase text-sm tracking-wide">
+              {config.label}
+            </h3>
+            {isWaitlist && (
+              <span className="px-1.5 py-0.5 rounded-sm bg-[#FFD700]/15 border border-[#FFD700]/40 text-[#FFD700] text-[10px] font-bold uppercase tracking-wider">
+                Waitlist
+              </span>
+            )}
+          </div>
           <p className="text-[#5B8DB8] text-xs mt-0.5">{config.subtitle}</p>
         </div>
       </div>
@@ -174,13 +199,19 @@ function ServiceCard({
         </div>
 
         <div className="h-6 flex items-center">
-          {isActive ? (
+          {!isActive ? (
+            <p className="text-[#6B7280] text-sm italic">
+              {isWaitlist ? "Slide to request" : "Slide to estimate"}
+            </p>
+          ) : isWaitlist ? (
+            <p className="text-[#FFD700] font-bold text-base">
+              Waitlist / Custom Quote
+            </p>
+          ) : (
             <p className="text-[#FFD700] font-bold text-lg">
               ${estimate.low.toLocaleString()} – $
               {estimate.high.toLocaleString()}
             </p>
-          ) : (
-            <p className="text-[#6B7280] text-sm italic">Slide to estimate</p>
           )}
         </div>
       </div>
@@ -193,6 +224,7 @@ function ServiceCard({
 // ============================================================================
 
 export default function ServiceCostEstimator() {
+  const router = useRouter();
   const [values, setValues] = useState<Record<ServiceKey, number>>({
     houseWashing: 0,
     concreteCleaning: 0,
@@ -222,12 +254,42 @@ export default function ServiceCostEstimator() {
       estimate: calculateEstimate(values[key], PRICING_CONFIG[key]),
     }));
 
-  const totalLow = activeServices.reduce((sum, s) => sum + s.estimate.low, 0);
-  const totalHigh = activeServices.reduce(
-    (sum, s) => sum + s.estimate.high,
-    0
+  const pricedServices = activeServices.filter(
+    (s) => s.config.quoteType === "priced"
   );
+  const totalLow = pricedServices.reduce((sum, s) => sum + s.estimate.low, 0);
+  const totalHigh = pricedServices.reduce((sum, s) => sum + s.estimate.high, 0);
   const hasActiveServices = activeServices.length > 0;
+  const hasPricedServices = pricedServices.length > 0;
+
+  const handleLockInPrice = () => {
+    const payload: EstimateHandoff = {
+      lineItems: activeServices.map(
+        ({ key, config, value, estimate }): EstimateLineItem => ({
+          key,
+          label: config.label,
+          quantity: value,
+          unit: config.unit,
+          quoteType: config.quoteType,
+          low: estimate.low,
+          high: estimate.high,
+        })
+      ),
+      totalLow,
+      totalHigh,
+      createdAt: new Date().toISOString(),
+    };
+
+    saveEstimate(payload);
+
+    // The quote form only lives on the homepage — from /estimate we navigate.
+    const target = document.getElementById("contact");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      router.push("/#contact");
+    }
+  };
 
   return (
     <section id="cost-estimator" className="relative py-16 md:py-24">
@@ -286,22 +348,35 @@ export default function ServiceCostEstimator() {
                         ({value.toLocaleString()} {config.unit})
                       </span>
                     </span>
-                    <span className="text-[#001F3F] font-medium">
-                      ${estimate.low.toLocaleString()} – $
-                      {estimate.high.toLocaleString()}
+                    <span className="text-[#001F3F] font-medium whitespace-nowrap">
+                      {config.quoteType === "waitlist" ? (
+                        "Waitlist / Custom Quote"
+                      ) : (
+                        <>
+                          ${estimate.low.toLocaleString()} – $
+                          {estimate.high.toLocaleString()}
+                        </>
+                      )}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex justify-between items-center">
-              <span className="text-[#001F3F] font-sans font-bold uppercase text-xl md:text-2xl tracking-wide">
-                  Total Estimated Range
-                </span>
-                <span className="text-[#FFD700] font-bold text-2xl md:text-4xl">
-                  ${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}
-                </span>
-              </div>
+              {hasPricedServices ? (
+                <div className="flex justify-between items-center">
+                  <span className="text-[#001F3F] font-sans font-bold uppercase text-xl md:text-2xl tracking-wide">
+                    Total Estimated Range
+                  </span>
+                  <span className="text-[#FFD700] font-bold text-2xl md:text-4xl">
+                    ${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}
+                  </span>
+                </div>
+              ) : (
+                <p className="text-[#001F3F] text-sm">
+                  Roof cleaning is waitlist-only — send this over and we&apos;ll
+                  follow up with a custom quote.
+                </p>
+              )}
             </>
           ) : (
             <p className="text-[#6B7280] text-center py-4">
@@ -309,6 +384,19 @@ export default function ServiceCostEstimator() {
             </p>
           )}
         </div>
+
+        {/* Hand the estimate off to the quote form */}
+        {hasActiveServices && (
+          <button
+            onClick={handleLockInPrice}
+            className="group w-full px-6 py-5 bg-[#FFD700] text-[#001F3F] font-sans font-bold text-base md:text-lg uppercase tracking-wider rounded-lg transition-all hover:shadow-[0_0_30px_-5px_rgba(255,215,0,0.5)] flex items-center justify-center gap-3"
+          >
+            {hasPricedServices
+              ? "Lock In This Price — Get My Free Quote"
+              : "Join The Waitlist — Get My Free Quote"}
+            <ArrowRight className="w-5 h-5 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
+        )}
 
         {/* Disclaimer */}
         <p className="text-[#6B7280] text-xs text-center mt-4 px-2">

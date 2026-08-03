@@ -1,7 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import {
+  loadEstimate,
+  clearEstimate,
+  pickPrimaryService,
+  formatEstimateNotes,
+  ESTIMATE_APPLIED_EVENT,
+  type EstimateHandoff,
+} from '@/lib/estimate-handoff'
 
 // 1. Initialize Supabase Client securely
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
@@ -12,6 +20,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey)
 const services = [
   { id: 'housewash', label: 'House Wash' },
   { id: 'concrete', label: 'Concrete Cleaning' },
+  { id: 'windows', label: 'Exterior Window Cleaning' },
   { id: 'gutters', label: 'Gutter Cleaning' },
   { id: 'roof-waitlist', label: 'Roof Cleaning Waitlist' },
   { id: 'other', label: 'Other' },
@@ -29,11 +38,41 @@ export function QuoteForm() {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [attachedEstimate, setAttachedEstimate] = useState<EstimateHandoff | null>(null)
+
+  // Pick up an estimate handed over from the cost estimator — either on first
+  // load (arriving from /estimate) or live, when the button is clicked further
+  // up this same page.
+  useEffect(() => {
+    const sync = () => {
+      const estimate = loadEstimate()
+      setAttachedEstimate(estimate)
+
+      if (estimate) {
+        const primary = pickPrimaryService(estimate)
+        if (primary) {
+          setFormData((prev) => ({ ...prev, service: primary }))
+        }
+      }
+    }
+
+    sync()
+    window.addEventListener(ESTIMATE_APPLIED_EVENT, sync)
+    return () => window.removeEventListener(ESTIMATE_APPLIED_EVENT, sync)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-   
+
+    // Keep whatever the customer typed, then append the itemized estimate so it
+    // rides along to the owner email via internal_notes.
+    const internalNotes = attachedEstimate
+      ? [formData.notes.trim(), formatEstimateNotes(attachedEstimate)]
+          .filter(Boolean)
+          .join('\n\n')
+      : formData.notes
+
     try {
       // 2. The Direct Supabase Push
       const { error } = await supabase
@@ -45,7 +84,7 @@ export function QuoteForm() {
       email: formData.email,
       service_address: formData.address,
       service_requested: formData.service,
-      internal_notes: formData.notes
+      internal_notes: internalNotes
     }
   ])
 
@@ -53,11 +92,27 @@ export function QuoteForm() {
         throw error
       }
 
-      // Success
+      // Success — drop the stored estimate so it can't attach to a later visit.
+      clearEstimate()
       setIsSubmitted(true)
-      
+
     } catch (err) {
-      console.error('Supabase insertion error:', err)
+      // Log the readable fields — a bare object logs as "[object Object]" and
+      // tells us nothing when a real lead fails to land.
+      const detail = err as { message?: string; details?: string; hint?: string; code?: string }
+      console.error(
+        'Supabase insertion error:',
+        JSON.stringify(
+          {
+            message: detail?.message,
+            details: detail?.details,
+            hint: detail?.hint,
+            code: detail?.code,
+          },
+          null,
+          2
+        )
+      )
       alert("Transmission Error. Please check your connection or database permissions.")
     } finally {
       setIsSubmitting(false)
@@ -108,6 +163,54 @@ export function QuoteForm() {
                 </p>
               </div>
             ) : (
+              <>
+              {attachedEstimate && (
+                <div className="mb-8 rounded-sm border-2 border-signal-gold/60 bg-signal-gold/10 p-4">
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <div>
+                      <p className="font-sans font-bold text-sm text-deep-navy uppercase tracking-wider">
+                        Your Estimate Is Attached
+                      </p>
+                      {attachedEstimate.totalHigh > 0 && (
+                        <p className="font-sans font-bold text-2xl text-deep-navy mt-1">
+                          ${attachedEstimate.totalLow.toLocaleString()} – ${attachedEstimate.totalHigh.toLocaleString()}
+                        </p>
+                      )}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={clearEstimate}
+                      aria-label="Remove attached estimate"
+                      className="flex-shrink-0 text-deep-navy/40 hover:text-deep-navy transition-colors text-2xl leading-none"
+                    >
+                      ×
+                    </button>
+                  </div>
+
+                  <ul className="space-y-1">
+                    {attachedEstimate.lineItems.map((item) => (
+                      <li key={item.key} className="flex justify-between gap-4 text-sm text-deep-navy/80">
+                        <span>
+                          {item.label}{' '}
+                          <span className="text-deep-navy/50">
+                            ({item.quantity.toLocaleString()} {item.unit})
+                          </span>
+                        </span>
+                        <span className="font-medium whitespace-nowrap">
+                          {item.quoteType === 'waitlist'
+                            ? 'Waitlist'
+                            : `$${item.low.toLocaleString()} – $${item.high.toLocaleString()}`}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="font-mono text-[10px] text-deep-navy/50 uppercase tracking-wider mt-3">
+                    Sent with your request — edit anything below before submitting.
+                  </p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div>
@@ -232,6 +335,7 @@ export function QuoteForm() {
                   <div className="absolute inset-0 bg-signal-gold-hover translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 </button>
               </form>
+              </>
             )}
 
             <div className="mt-6 text-center">

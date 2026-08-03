@@ -56,8 +56,12 @@ Deno.serve(async (req) => {
           subject: "New Pineywoods Lead!",
           html: `
             <h2>New Quote Request Received</h2>
-            <p><strong>Name:</strong> ${clientName}</p>
-            <p><strong>Phone:</strong> ${clientPhone}</p>
+            <p><strong>Name:</strong> ${lead.client_name ?? "Not provided"}</p>
+            <p><strong>Phone:</strong> ${lead.phone ?? "Not provided"}</p>
+            <p><strong>Email:</strong> ${lead.email ?? "Not provided"}</p>
+            <p><strong>Service Address:</strong> ${lead.service_address ?? "Not provided"}</p>
+            <p><strong>Service Requested:</strong> ${lead.service_requested ?? "Not provided"}</p>
+            <p><strong>Additional Info:</strong> ${lead.internal_notes ?? "None provided"}</p>
             <p>Time to get out there and wash!</p>
           `,
         }),
